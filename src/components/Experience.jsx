@@ -13,7 +13,7 @@ const Experience = () => {
             {info.amount.map((inf, index) => (
                 <div className="space-y-3" key={index} >
                     <p className="text-4xl md:text-5xl text-bgray">{inf}</p>
-                    <p className=" text-btblack text-lightblack">{info.service[index]}</p>
+                    <p className="  text-lightblack">{info.service[index]}</p>
                 </div>
             ))}
         </div>
