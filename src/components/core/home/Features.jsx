@@ -4,7 +4,7 @@ const Features = () => {
 
     return (
         <section className='my-12 md:my-20'>
-            <main className='grid sg:grid-cols-2 sg:gap-x-5'>
+            <div className='grid sg:grid-cols-2 sg:gap-x-5'>
                 <p className='capitalize font-bold text-2xl w-3/4 sg:w-4/5  sg:mt-2 sg:text-4xl md:text-5xl '>best Features we offer to you </p>
                 <div className="">
                     <p className='my-5  md:text-xl text-btblack'>We are dedicated to helping you achieve your health goals, providing you with the tools, support and resources.</p>
@@ -17,8 +17,8 @@ const Features = () => {
                         </button>
                     </div>
                 </div>
-            </main>
-            <aside className='grid md:grid-cols-3 md:gap-8 '>
+            </div>
+            <div className='grid md:grid-cols-3 md:gap-8 '>
                 <div className="feature ">
                     <FaExternalLinkAlt className='relative  left-3/4 mb-2 text-5xl text-lightblack' />
                     <h1>tracking</h1>
@@ -35,7 +35,7 @@ const Features = () => {
                     <p >with our tracking Feature, you can access real-time data on website traffic, conversations, click-through rates, and more. You can monitor campign.</p>
                     <button type="button " className='relative rounded-2xl px-8 py-4 font-bold text-xl top-14 capitalize bg-tlgreen text-lightblack'>discover more</button>
                 </div>
-            </aside>
+            </div>
         </section>
     )
 }
