@@ -6,7 +6,7 @@ const Experience = () => {
       {infos.map((info) => (
         <div className="space-y-3" key={info.id}>
           <p className="text-4xl md:text-5xl text-bgray">{info.amount}</p>
-          <p className="  text-lightblack">{info.service}</p>
+          <p className="  text-lightblack px-2">{info.service}</p>
         </div>
       ))}
     </div>
