@@ -3,14 +3,13 @@
 @tailwind utilities;
 
 @layer base {
-    body{
-        @apply overflow-x-hidden;
-    }
+  body {
+    @apply overflow-x-hidden;
+  }
 }
 
 @layer components {
-    .navlink:has(>a.active) {
-        @apply after:w-full;
-    }
+  .navlink:has(> a.active) {
+    @apply after:w-full;
+  }
 }
-
