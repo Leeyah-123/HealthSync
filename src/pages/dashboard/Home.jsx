@@ -18,7 +18,7 @@ const Home = () => {
             <h2 className="text-2xl lg:text-[30px] font-bold">
               Hello, Gilbert
             </h2>
-            <p className="text-lightGray3 mt-2">Keep Moving & Stay Healthy</p>
+            <p className=" mt-2">Keep Moving & Stay Healthy</p>
           </div>
           <div className="text-green flex gap-6 mt-2 lg:mt-0">
             <div className="border-green border-2 py-2 lg:py-4 px-4 lg:px-6 rounded-[15px] lg:rounded-[20px] flex items-center gap-6">
@@ -26,10 +26,10 @@ const Home = () => {
               <Calendar />
             </div>
             <div
-              aria-label="notifications"
               className="bg-lightGreen rounded-[15px] lg:rounded-[20px] w-[60px]  flex justify-center items-center cursor-pointer"
             >
-              <BellDot />
+              <BellDot aria-label="view notifications"
+              role="button" />
             </div>
           </div>
         </div>

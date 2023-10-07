@@ -31,7 +31,7 @@ const Profile = () => {
       <section
         className={`lg:block lg:h-screen fixed  lg:static ${
           isProfileClicked ? "block w-[90vw] mx-auto left-[5%]" : "hidden "
-        } h-full  bg-white rounded-[20px] shadow-md pt-16 pb-16 overflow-y-auto px-8`}
+        } h-full  bg-white rounded-[20px] shadow-md py-16 overflow-y-auto px-8`}
       >
         <div className="text-center">
           <img
@@ -40,13 +40,13 @@ const Profile = () => {
             alt="profile-image"
           />
           <h2 className="font-bold mt-6 text-xl">Rodney Gilbert</h2>
-          <p className="text-green mt-2">Athletic Coach</p>
+          <p className="text-lemon mt-2">Athletic Coach</p>
         </div>
         <div className=" flex flex-col lg:flex-row gap-4 pr-2 mt-4 items-center justify-between">
           {userInfo.map((info, index) => (
             <div key={index}>
               <p className="text-xs font-bold text-center">{info.name}</p>
-              <div className="w-[95px] py-2 bg-green text-white mt-2 rounded-[10px] text-center">
+              <div className="w-[95px] py-2 bg-lemon text-white mt-2 rounded-[10px] text-center">
                 {info.value}
               </div>
             </div>
@@ -84,7 +84,7 @@ const Profile = () => {
               key={index}
               className="bg-[#F6F4F4] w-full mt-4 py-2  rounded-[20px]  flex items-center"
             >
-              <div className="border-l-[8px] border-green  py-2 pl-8 pr-6 w-full rounded-[10px] flex justify-between items-center">
+              <div className="border-l-[8px] border-lemon  py-2 pl-8 pr-6 w-full rounded-[10px] flex justify-between items-center">
                 <div>
                   <h3 className="font-bold">{task.name}</h3>
                   <p className="text-lightGray3">{task.time}</p>
@@ -104,12 +104,12 @@ const Profile = () => {
       {/* profile icon */}
       <div
         onClick={handleClickedHamburger}
-        aria-label="view-profile"
         className={`text-green mt-8 ml-[20px] md:ml-[40px] cursor-pointer top-0 lg:hidden ${
           isProfileClicked ? "z-20 fixed" : "absolute"
         }`}
       >
-        <UserCircle />
+        <UserCircle  aria-label="view profile"
+        role="button" />
       </div>
     </div>
   );

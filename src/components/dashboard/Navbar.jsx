@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav>
       <div
-        className={`lg:block w-[100px] lg:w-[150px] pt-14 lg:pt-8 px-4 h-full bg-green ${
+        className={`lg:block w-[100px] lg:w-[150px] pt-14 lg:pt-8 px-4 h-full bg-lemon ${
           isHamburgerClicked
             ? "block z-10 lg:z-0 fixed lg:static top-0"
             : "hidden "

@@ -6,7 +6,7 @@ const Card = ({activityName, activityProgress, icon}) => {
                     <p className="text-xl md:text-lg lg:text-2xl mb-4">{activityProgress}</p>
                     <p>{activityName}</p>
                 </div>
-                <div className="bg-[#00683E] flex justify-center items-center p-2 w-[50px] h-[50px] rounded-[15px]">
+                <div className="bg-green flex justify-center items-center p-2 w-[50px] h-[50px] rounded-[15px]">
                     {icon}
                 </div>
             </div>
