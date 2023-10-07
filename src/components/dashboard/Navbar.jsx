@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import logo from "../../assets/images/logo-rmbg.png";
+import logo from "../../../public/assets/logo-rmbg.png"
 import { Home, Settings, Users, Calendar } from "lucide-react";
 import { useState } from "react";
 
