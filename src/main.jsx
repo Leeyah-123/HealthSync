@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, Navigate } from 'react-router-dom';
 import App from './App';
 import AuthLayout from './components/layout/auth/auth.layout';
 import './index.css';
@@ -11,8 +11,8 @@ import Home from "./pages/dashboard/Home";
 import Forum from "./pages/dashboard/Forum";
 import Settings from "./pages/dashboard/Settings";
 import Calendar from "./pages/dashboard/Calendar";
-import { Navigate } from 'react-router-dom';
 import {ChakraProvider} from "@chakra-ui/react"
+
 
 const router = createBrowserRouter([
   {
@@ -34,6 +34,7 @@ const router = createBrowserRouter([
       { path: 'login', element: <Signin /> },
     ],
   },
+
   {
     path: '/dashboard',
     element: <DashboardPage />,
