@@ -1,13 +1,13 @@
-import Card from "../../components/dashboard/Card";
-import Profile from "../../components/dashboard/Profile";
-import { todayDate } from "../../helpers/helper";
-import { Calendar, BellDot, Moon, Droplet, Footprints } from "lucide-react";
+import { BellDot, Calendar, Droplet, Footprints, Moon } from 'lucide-react';
+import Card from '../../components/simple/dashboard/Card';
+import Profile from '../../components/complex/dashboard/Profile';
+import { todayDate } from '../../helpers/helper';
 
-const Home = () => {
+const DashboardHome = () => {
   const activity = [
-    { name: "Sleep", progress: "6.3 Hours", icon: <Moon /> },
-    { name: "Water", progress: "5 Litres", icon: <Droplet /> },
-    { name: "Walking", progress: "1590 Steps", icon: <Footprints /> },
+    { name: 'Sleep', progress: '6.3 Hours', icon: <Moon /> },
+    { name: 'Water', progress: '5 Litres', icon: <Droplet /> },
+    { name: 'Walking', progress: '1590 Steps', icon: <Footprints /> },
   ];
 
   return (
@@ -25,11 +25,8 @@ const Home = () => {
               <p>{todayDate()}</p>
               <Calendar />
             </div>
-            <div
-              className="bg-lightGreen rounded-[15px] lg:rounded-[20px] w-[60px]  flex justify-center items-center cursor-pointer"
-            >
-              <BellDot aria-label="view notifications"
-              role="button" />
+            <div className="bg-lightGreen rounded-[15px] lg:rounded-[20px] w-[60px]  flex justify-center items-center cursor-pointer">
+              <BellDot aria-label="view notifications" role="button" />
             </div>
           </div>
         </div>
@@ -52,4 +49,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default DashboardHome;

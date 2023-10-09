@@ -4,25 +4,33 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(216, 216, 216);
+  border-radius: 40px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
 
-*{
+* {
   font-family: 'Poppins', sans-serif;
 }
 
-a.active{
-  background-color: rgba(254,254,255, .4);
+a.active {
+  background-color: rgba(254, 254, 255, 0.4);
 }
 
-
- @layer base {
-    body{
-        @apply overflow-x-hidden;
-    }
+@layer base {
+  body {
+    @apply overflow-x-hidden;
+  }
 }
 
 @layer components {
-    .navlink:has(>a.active) {
-        @apply after:w-full;
-    }
-} 
-
+  .navlink:has(> a.active) {
+    @apply after:w-full;
+  }
+}

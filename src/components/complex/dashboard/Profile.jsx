@@ -1,8 +1,7 @@
-import { Progress, Stack, Checkbox } from "@chakra-ui/react";
-import { UserCircle } from "lucide-react";
-import "../../App.css";
-import { useState } from "react";
-import profileImg from "/assets/fatMan.jpg";
+import { Checkbox, Progress } from '@chakra-ui/react';
+import { UserCircle } from 'lucide-react';
+import { useState } from 'react';
+import profileImg from '/assets/fatMan.jpg';
 
 const Profile = () => {
   const [isProfileClicked, setIsProfileClicked] = useState(false);
@@ -12,25 +11,25 @@ const Profile = () => {
   };
 
   const userInfo = [
-    { name: "Height", value: "185cm" },
-    { name: "Weight", value: "65kg" },
-    { name: "Age", value: "54" },
+    { name: 'Height', value: '185cm' },
+    { name: 'Weight', value: '65kg' },
+    { name: 'Age', value: '54' },
   ];
   const goals = [
-    { name: "Sleep", max: 300, value: 100, unit: "hours" },
-    { name: "Running", max: 100, value: 20, unit: "km" },
-    { name: "Loose Weight", max: 6, value: 3, unit: "kg" },
+    { name: 'Sleep', max: 300, value: 100, unit: 'hours' },
+    { name: 'Running', max: 100, value: 20, unit: 'km' },
+    { name: 'Loose Weight', max: 6, value: 3, unit: 'kg' },
   ];
   const upcomingTask = [
-    { name: "Gymnastic", time: "13/10/2023 | 4:00pm", done: true },
-    { name: "Running", time: "14/10/2023 | 5:00pm", done: false },
+    { name: 'Gymnastic', time: '13/10/2023 | 4:00pm', done: true },
+    { name: 'Running', time: '14/10/2023 | 5:00pm', done: false },
   ];
 
   return (
     <div className="relative">
       <section
         className={`lg:block lg:h-screen fixed  lg:static ${
-          isProfileClicked ? "block w-[90vw] mx-auto left-[5%]" : "hidden "
+          isProfileClicked ? 'block w-[90vw] mx-auto left-[5%]' : 'hidden '
         } h-full  bg-white rounded-[20px] shadow-md py-16 overflow-y-auto px-8`}
       >
         <div className="text-center">
@@ -59,7 +58,7 @@ const Profile = () => {
               <div className="flex justify-between items-center text-sm font-bold">
                 <h3 className="mb-2">{goal.name}</h3>
                 <p>
-                  {goal.value}{" "}
+                  {goal.value}{' '}
                   <span className="text-lightGray3 font-normal">
                     / {goal.max} {goal.unit}
                   </span>
@@ -105,11 +104,10 @@ const Profile = () => {
       <div
         onClick={handleClickedHamburger}
         className={`text-green mt-8 ml-[20px] md:ml-[40px] cursor-pointer top-0 lg:hidden ${
-          isProfileClicked ? "z-20 fixed" : "absolute"
+          isProfileClicked ? 'z-20 fixed' : 'absolute'
         }`}
       >
-        <UserCircle  aria-label="view profile"
-        role="button" />
+        <UserCircle aria-label="view profile" role="button" />
       </div>
     </div>
   );
