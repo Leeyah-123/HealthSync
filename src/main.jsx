@@ -1,23 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-// import App from './App';
+<<<<<<< HEAD
+import App from './App';
 import AuthLayout from './components/layout/auth/auth.layout';
 import './index.css';
 import Signin from './pages/auth/signin';
 import Signup from './pages/auth/signup';
+=======
 import App from './App.jsx';
 import './index.css';
 import Home from './routes/home.routes.jsx';
 import Contact from './routes/contact.routes.jsx';
 import Login from './routes/auth/login.routes.jsx';
-// import Signup from './routes/auth/signup.routes.jsx';
+import Signup from './routes/auth/signup.routes.jsx';
+>>>>>>> landingpage
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
+<<<<<<< HEAD
       // Landing Page should go here
       // {
       //   index: true,
@@ -31,6 +35,7 @@ const router = createBrowserRouter([
     children: [
       { path: 'signup', element: <Signup /> },
       { path: 'login', element: <Signin /> },
+=======
       {
         index: true,
         element: <Home />,
@@ -52,6 +57,7 @@ const router = createBrowserRouter([
           },
         ],
       },
+>>>>>>> landingpage
     ],
   },
 ]);

@@ -11,6 +11,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.1",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "framer-motion": "^10.16.4",
+    "lucide-react": "^0.284.0",
     "flowbite": "^1.8.1",
     "flowbite-react": "^0.6.4",
     "react": "^18.2.0",
