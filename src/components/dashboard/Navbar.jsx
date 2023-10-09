@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
 
-import logo from "../../../public/assets/logo-rmbg.png"
+import logo from "/assets/logo-rmbg.png"
 import { Home, Settings, Users, Calendar } from "lucide-react";
 import { useState } from "react";
+
 
 const Navbar = () => {
   const [isHamburgerClicked, setIsHamburgerClicked] = useState(false);

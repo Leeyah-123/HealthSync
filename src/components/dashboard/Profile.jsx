@@ -2,7 +2,7 @@ import { Progress, Stack, Checkbox } from "@chakra-ui/react";
 import { UserCircle } from "lucide-react";
 import "../../App.css";
 import { useState } from "react";
-import profileImg from "../../../public/assets/fatMan.jpg";
+import profileImg from "/assets/fatMan.jpg";
 
 const Profile = () => {
   const [isProfileClicked, setIsProfileClicked] = useState(false);
