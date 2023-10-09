@@ -1,11 +1,21 @@
+import { ChakraProvider } from '@chakra-ui/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import {
+  Navigate,
+  RouterProvider,
+  createBrowserRouter,
+} from 'react-router-dom';
 import App from './App';
 import AuthLayout from './components/layout/auth/auth.layout';
 import './index.css';
 import Signin from './pages/auth/signin';
 import Signup from './pages/auth/signup';
+import Calendar from './pages/dashboard/Calendar';
+import DashboardPage from './pages/dashboard/DashboardPage';
+import Forum from './pages/dashboard/Forum';
+import DashboardHome from './pages/dashboard/Home';
+import Settings from './pages/dashboard/Settings';
 
 const router = createBrowserRouter([
   {
@@ -27,10 +37,24 @@ const router = createBrowserRouter([
       { path: 'login', element: <Signin /> },
     ],
   },
+
+  {
+    path: '/dashboard',
+    element: <DashboardPage />,
+    children: [
+      { index: true, element: <Navigate to="/dashboard/home" replace /> },
+      { path: '/dashboard/home', element: <DashboardHome /> },
+      { path: '/dashboard/forum', element: <Forum /> },
+      { path: '/dashboard/calendar', element: <Calendar /> },
+      { path: '/dashboard/settings', element: <Settings /> },
+    ],
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ChakraProvider>
+      <RouterProvider router={router} />
+    </ChakraProvider>
   </React.StrictMode>
 );
