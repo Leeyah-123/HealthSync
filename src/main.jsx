@@ -8,22 +8,22 @@ import Signin from './pages/auth/signin';
 // import Signup from './pages/auth/signup';
 import App from './App.jsx';
 import './index.css';
-import Home from './routes/home.routes.jsx';
-import Contact from './routes/contact.routes.jsx';
 import Login from './routes/auth/login.routes.jsx';
 import Signup from './routes/auth/signup.routes.jsx';
+import Contact from './routes/contact.routes.jsx';
 
 const router = createBrowserRouter([
   {
+    index: true,
     path: '/',
     element: <App />,
-    children: [
-      // Landing Page should go here
-      // {
-      //   index: true,
-      //   element: <Home />,
-      // },
-    ],
+    // children: [
+    //   // Landing Page should go here
+    //   {
+    //     index: true,
+    //     element: <Home />,
+    //   },
+    // ],
   },
   {
     path: '/auth',
@@ -31,10 +31,7 @@ const router = createBrowserRouter([
     children: [
       { path: 'signup', element: <Signup /> },
       { path: 'login', element: <Signin /> },
-      {
-        index: true,
-        element: <Home />,
-      },
+
       {
         path: 'contact',
         element: <Contact />,
