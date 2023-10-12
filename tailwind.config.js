@@ -13,7 +13,7 @@ export default {
         green: "#00683e",
         lemon: "#CDFB47",
         lightGreen: "rgba(205,251,71, .2)",
-        lightGray: "#F9FAFC",
+        lightGray1: "#F9FAFC",
         lightGray2: "rgba(254,254,255, .4)",
         lightGray3: "#AAA8A8",
         bgray: "#f6f6f4",
