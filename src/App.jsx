@@ -1,18 +1,19 @@
 import { Outlet } from 'react-router-dom';
-import './App.css';
-import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer.jsx';
+import Main from './components/core/home/Main';
+import LandingNav from './components/layout/landingNav';
 
 function App() {
   return (
     <>
-      <Navbar />
-
+      <LandingNav />
+      <Main />
       <main>
         <Outlet />
       </main>
 
       {/* Footer should go here */}
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

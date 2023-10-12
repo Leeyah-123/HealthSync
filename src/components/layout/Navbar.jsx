@@ -1,3 +1,4 @@
+
 import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
@@ -19,7 +20,9 @@ const Navbar = () => {
         </li>
       </ul>
     </nav>
-  );
+  )
 };
 
 export default Navbar;
+
+

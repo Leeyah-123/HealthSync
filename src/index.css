@@ -7,10 +7,12 @@
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: rgb(216, 216, 216);
   border-radius: 40px;
 }
+
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
@@ -33,4 +35,52 @@ a.active {
   .navlink:has(> a.active) {
     @apply after:w-full;
   }
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.feature {
+  background-color: #0f1412;
+  border-radius: 2rem;
+  text-align: center;
+  padding: 30px 10px;
+  margin: 1rem 0;
+}
+
+.feature p {
+  color: #4b4948;
+}
+
+.feature h1 {
+  text-transform: capitalize;
+  font-size: bold;
+  color: white;
+  padding: 1rem 0;
+  font-size: 25px;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.feature {
+  background-color: #0f1412;
+  border-radius: 2rem;
+  text-align: center;
+  padding: 30px 10px;
+  margin: 1rem 0;
+}
+
+.feature p {
+  color: #4b4948;
+}
+
+.feature h1 {
+  text-transform: capitalize;
+  font-size: bold;
+  color: white;
+  padding: 1rem 0;
+  font-size: 25px;
 }

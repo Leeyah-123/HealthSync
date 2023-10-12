@@ -1,33 +1,29 @@
-import { ChakraProvider } from '@chakra-ui/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  Navigate,
-  RouterProvider,
-  createBrowserRouter,
-} from 'react-router-dom';
-import App from './App';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+// import App from './App';
 import AuthLayout from './components/layout/auth/auth.layout';
 import './index.css';
 import Signin from './pages/auth/signin';
-import Signup from './pages/auth/signup';
-import Calendar from './pages/dashboard/Calendar';
-import DashboardPage from './pages/dashboard/DashboardPage';
-import Forum from './pages/dashboard/Forum';
-import DashboardHome from './pages/dashboard/Home';
-import Settings from './pages/dashboard/Settings';
+// import Signup from './pages/auth/signup';
+import App from './App.jsx';
+import './index.css';
+import Login from './routes/auth/login.routes.jsx';
+import Signup from './routes/auth/signup.routes.jsx';
+import Contact from './routes/contact.routes.jsx';
 
 const router = createBrowserRouter([
   {
+    index: true,
     path: '/',
     element: <App />,
-    children: [
-      // Landing Page should go here
-      // {
-      //   index: true,
-      //   element: <Home />,
-      // },
-    ],
+    // children: [
+    //   // Landing Page should go here
+    //   {
+    //     index: true,
+    //     element: <Home />,
+    //   },
+    // ],
   },
   {
     path: '/auth',
@@ -35,26 +31,30 @@ const router = createBrowserRouter([
     children: [
       { path: 'signup', element: <Signup /> },
       { path: 'login', element: <Signin /> },
-    ],
-  },
 
-  {
-    path: '/dashboard',
-    element: <DashboardPage />,
-    children: [
-      { index: true, element: <Navigate to="/dashboard/home" replace /> },
-      { path: '/dashboard/home', element: <DashboardHome /> },
-      { path: '/dashboard/forum', element: <Forum /> },
-      { path: '/dashboard/calendar', element: <Calendar /> },
-      { path: '/dashboard/settings', element: <Settings /> },
+      {
+        path: 'contact',
+        element: <Contact />,
+      },
+      {
+        path: 'auth',
+        children: [
+          {
+            path: 'login',
+            element: <Login />,
+          },
+          {
+            path: 'signup',
+            element: <Signup />,
+          },
+        ],
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ChakraProvider>
-      <RouterProvider router={router} />
-    </ChakraProvider>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
