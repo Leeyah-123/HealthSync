@@ -11,7 +11,7 @@ import AuthLayout from './components/layout/auth/auth.layout';
 import './index.css';
 import Signin from './pages/auth/signin';
 import Signup from './pages/auth/signup';
-import Calendar from './pages/dashboard/Calendar';
+import Schedule from './pages/dashboard/Schedule';
 import DashboardPage from './pages/dashboard/DashboardPage';
 import Forum from './pages/dashboard/Forum';
 import DashboardHome from './pages/dashboard/Home';
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       { index: true, element: <Navigate to="/dashboard/home" replace /> },
       { path: '/dashboard/home', element: <DashboardHome /> },
       { path: '/dashboard/forum', element: <Forum /> },
-      { path: '/dashboard/calendar', element: <Calendar /> },
+      { path: '/dashboard/calendar', element: <Schedule /> },
       { path: '/dashboard/settings', element: <Settings /> },
     ],
   },
