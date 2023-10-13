@@ -18,13 +18,6 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    // children: [
-    // Landing Page should go here
-    // {
-    //   index: true,
-    //   element: <Home />,
-    // },
-    // ],
   },
 
   {
