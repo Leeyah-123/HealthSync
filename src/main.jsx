@@ -1,10 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  Navigate,
-  RouterProvider,
-  createBrowserRouter,
-} from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import App from './App.jsx';
 import AuthLayout from './components/layout/auth/auth.layout';
 import './index.css';
@@ -23,13 +19,13 @@ const router = createBrowserRouter([
     index: true,
     path: '/',
     element: <App />,
-    // children: [
-    //   // Landing Page should go here
-    //   {
-    //     index: true,
-    //     element: <Home />,
-    //   },
-    // ],
+    children: [
+      // Landing Page should go here
+      // {
+      //   index: true,
+      //   element: <Home />,
+      // },
+    ],
   },
 
   {
@@ -55,11 +51,10 @@ const router = createBrowserRouter([
     path: '/dashboard',
     element: <DashboardPage />,
     children: [
-      { index: true, element: <Navigate to="/dashboard/home" replace /> },
-      { path: '/dashboard/home', element: <DashboardHome /> },
-      { path: '/dashboard/forum', element: <Forum /> },
-      { path: '/dashboard/calendar', element: <Schedule /> },
-      { path: '/dashboard/settings', element: <Settings /> },
+      { index: true, element: <DashboardHome /> },
+      { path: 'forum', element: <Forum /> },
+      { path: 'calendar', element: <Schedule /> },
+      { path: 'settings', element: <Settings /> },
     ],
   },
 ]);
