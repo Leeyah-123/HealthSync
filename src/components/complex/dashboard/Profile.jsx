@@ -28,7 +28,7 @@ const Profile = () => {
   return (
     <div className="relative">
       <section
-        className={`lg:block lg:h-screen fixed  lg:static ${
+        className={`lg:block lg:h-full fixed  lg:static ${
           isProfileClicked ? 'block w-[90vw] mx-auto left-[5%]' : 'hidden '
         } h-full  bg-white rounded-[20px] shadow-md py-16 overflow-y-auto px-8`}
       >

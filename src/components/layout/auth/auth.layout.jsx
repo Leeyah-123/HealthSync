@@ -13,7 +13,7 @@ const AuthLayout = () => {
         <Navbar />
         <Outlet />
       </main>
-      <aside className="w-[100%] md:w-[50%] lg:w-[50%]">
+      <aside className="w-[100%] md:w-[50%] lg:w-[50%] mr-5 mt-5">
         <img
           className="hidden md:flex lg:flex w-full object-cover h-[92vh] rounded-2xl relative z-50"
           src="/assets/main/img8.jpg"
