@@ -16,16 +16,15 @@ import Settings from './pages/dashboard/Settings';
 
 const router = createBrowserRouter([
   {
-    index: true,
     path: '/',
     element: <App />,
-    children: [
-      // Landing Page should go here
-      // {
-      //   index: true,
-      //   element: <Home />,
-      // },
-    ],
+    // children: [
+    // Landing Page should go here
+    // {
+    //   index: true,
+    //   element: <Home />,
+    // },
+    // ],
   },
 
   {
