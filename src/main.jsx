@@ -1,28 +1,27 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import {
+  Navigate,
   RouterProvider,
   createBrowserRouter,
-  Navigate,
-} from "react-router-dom";
-import AuthLayout from "./components/layout/auth/auth.layout";
-import App from "./App.jsx";
-import "./index.css";
-import Signin from "./pages/auth/signin";
-import Signup from "./pages/auth/signup";
+} from 'react-router-dom';
+import App from './App.jsx';
+import AuthLayout from './components/layout/auth/auth.layout';
+import './index.css';
+import Signin from './pages/auth/signin';
+import Signup from './pages/auth/signup';
 
-import DashboardPage from "./pages/dashboard/DashboardPage";
-import DashboardHome from "./pages/dashboard/Home";
-import Forum from "./pages/dashboard/Forum";
-import Settings from "./pages/dashboard/Settings";
-import Schedule from "./pages/dashboard/Schedule";
-
-import Contact from "./routes/contact.routes.jsx";
+import Contact from './pages/Contact';
+import DashboardPage from './pages/dashboard/DashboardPage';
+import Forum from './pages/dashboard/Forum';
+import DashboardHome from './pages/dashboard/Home';
+import Schedule from './pages/dashboard/Schedule';
+import Settings from './pages/dashboard/Settings';
 
 const router = createBrowserRouter([
   {
     index: true,
-    path: "/",
+    path: '/',
     element: <App />,
     // children: [
     //   // Landing Page should go here
@@ -34,37 +33,38 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "auth",
+    path: 'auth',
+    element: <AuthLayout />,
     children: [
       {
-        path: "login",
+        path: 'login',
         element: <Signin />,
       },
       {
-        path: "signup",
+        path: 'signup',
         element: <Signup />,
       },
       {
-        path: "contact",
+        path: 'contact',
         element: <Contact />,
       },
     ],
   },
 
   {
-    path: "/dashboard",
+    path: '/dashboard',
     element: <DashboardPage />,
     children: [
       { index: true, element: <Navigate to="/dashboard/home" replace /> },
-      { path: "/dashboard/home", element: <DashboardHome /> },
-      { path: "/dashboard/forum", element: <Forum /> },
-      { path: "/dashboard/calendar", element: <Schedule /> },
-      { path: "/dashboard/settings", element: <Settings /> },
+      { path: '/dashboard/home', element: <DashboardHome /> },
+      { path: '/dashboard/forum', element: <Forum /> },
+      { path: '/dashboard/calendar', element: <Schedule /> },
+      { path: '/dashboard/settings', element: <Settings /> },
     ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
