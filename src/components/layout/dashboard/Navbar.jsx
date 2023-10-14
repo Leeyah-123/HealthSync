@@ -28,14 +28,14 @@ const DashboardNavbar = () => {
   return (
     <nav ref={navRef}>
       <div
-        className={`lg:block w-[100px] lg:w-[150px] pt-14 lg:pt-8 px-4 h-full overflow-y-auto bg-lemon ${
-          isNavOpen ? 'block z-10 lg:z-0 fixed lg:static top-0' : 'hidden '
+        className={`lg:block w-[100px] pt-14 lg:pt-8 h-full overflow-y-auto bg-lemon ${
+          isNavOpen ? 'block z-10 lg:z-0 fixed lg:static top-0' : 'hidden'
         }`}
       >
         <img
           src={logo}
           alt="healthSync-logo"
-          className="w-[70px] h-[60px] lg:w-[120px] lg:h-[110px]"
+          className="w-[70px] h-[60px] lg:w-[90px] lg:h-[80px] mx-auto"
         />
         <ul id="navigation" className="flex items-center flex-col mt-16 gap-8">
           {DashboardRoutes.children
@@ -60,7 +60,7 @@ const DashboardNavbar = () => {
         aria-controls="navigation"
         aria-expanded={isNavOpen}
         onClick={toggleNavOpen}
-        className={`mt-8 top-0 left-5 sm:left-10 md:left-20 lg:hidden ${
+        className={`mt-8 -top-2 right-5 sm:right-10 md:right-20 lg:hidden ${
           isNavOpen ? 'z-20 fixed' : 'absolute'
         }`}
       >
