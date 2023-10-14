@@ -1,4 +1,15 @@
 import {
+  CategoryScale,
+  Chart as ChartJS,
+  Legend,
+  LineElement,
+  LinearScale,
+  PointElement,
+  Title,
+} from 'chart.js';
+import faker from 'faker';
+import { Tooltip } from 'flowbite-react';
+import {
   BellDot,
   Calendar,
   Droplet,
@@ -7,6 +18,7 @@ import {
   UserCircle2,
 } from 'lucide-react';
 import { useState } from 'react';
+import { Line } from 'react-chartjs-2';
 import Profile from '../../components/complex/dashboard/Profile';
 import Card from '../../components/simple/dashboard/Card';
 import { todayDate } from '../../utils/helper';
@@ -20,6 +32,49 @@ const DashboardHome = () => {
     { name: 'Water', progress: '5 Litres', icon: <Droplet /> },
     { name: 'Walking', progress: '1590 Steps', icon: <Footprints /> },
   ];
+
+  ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+  );
+
+  const chartOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+    },
+  };
+
+  const labels = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+  ];
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Dataset 1',
+        data: labels.map(() =>
+          faker.datatype.number({ min: -1000, max: 1000 })
+        ),
+        borderColor: 'rgb(205, 251, 71)',
+        backgroundColor: 'rgba(205, 251, 71, 0.5)',
+      },
+    ],
+  };
 
   return (
     <main className="px-5 sm:px-10 md:px-20 lg:px-0 mt-20 lg:mx-0 lg:mt-10 w-full grid lg:grid-cols-[70%_30%] gap-5">
@@ -61,6 +116,25 @@ const DashboardHome = () => {
               icon={act.icon}
             />
           ))}
+        </div>
+
+        <div className="grid gap-5 mx-auto lg:max-w-[95%]">
+          <Line
+            options={{
+              ...chartOptions,
+              plugins: { title: { text: 'Weight History', display: true } },
+            }}
+            data={data}
+          />
+          <Line
+            options={{
+              ...chartOptions,
+              plugins: {
+                title: { text: 'Calorie Intake History', display: true },
+              },
+            }}
+            data={data}
+          />
         </div>
       </div>
 

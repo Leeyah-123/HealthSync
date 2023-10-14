@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import DashboardLayout from '../components/layout/dashboard/dashboard.layout';
 import Forum from '../pages/dashboard/Forum';
 import DashboardHome from '../pages/dashboard/Home';
-import WorkoutPlanner from '../pages/dashboard/Schedule';
+import WorkoutPlanner from '../pages/dashboard/WorkoutPlanner';
 
 const DashboardRoutes = {
   path: '/dashboard',

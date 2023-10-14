@@ -22,7 +22,7 @@ const Profile = ({ isProfileOpen, toggleProfileOpen }) => {
   return (
     <div className="relative">
       <section
-        className={`lg:block h-full fixed inset-0 lg:static bg-white rounded-[20px] shadow-md py-16 overflow-y-auto px-8 ${
+        className={`lg:block h-full fixed inset-0 lg:static lg:h-fit bg-white rounded-[20px] shadow-md py-16 overflow-y-auto px-8 ${
           isProfileOpen ? 'block w-full' : 'hidden'
         }`}
       >
@@ -35,7 +35,7 @@ const Profile = ({ isProfileOpen, toggleProfileOpen }) => {
           <h2 className="font-bold mt-6 text-xl">Rodney Gilbert</h2>
           <p className="text-lemon mt-2">Athletic Coach</p>
         </div>
-        <div className="flex gap-4 pr-2 mt-4 items-center min-w-fit flex-wrap xl:flex-nowrap justify-center">
+        <div className="flex gap-4 pr-2 mt-4 justify-center min-w-fit flex-wrap xl:flex-nowrap xl:justify-evenly xl:gap-0">
           {userInfo.map((info, index) => (
             <div key={index}>
               <p className="text-xs font-bold text-center">{info.name}</p>
