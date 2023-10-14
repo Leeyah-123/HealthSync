@@ -22,7 +22,7 @@ const Profile = ({ isProfileOpen, toggleProfileOpen }) => {
   return (
     <div className="relative">
       <section
-        className={`lg:block h-full fixed inset-0 lg:static lg:h-fit bg-white rounded-[20px] shadow-md py-16 overflow-y-auto px-8 ${
+        className={`lg:block h-full fixed inset-0 lg:static lg:max-h-[90vh] bg-white rounded-[20px] shadow-md py-16 overflow-y-auto px-8 ${
           isProfileOpen ? 'block w-full' : 'hidden'
         }`}
       >
