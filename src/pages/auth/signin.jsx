@@ -23,7 +23,7 @@ const Signin = () => {
         </h2>
       </div>
       <form
-        className="grid h-full my-4 mx-auto sm:w-[80%] md:w-full p-2 gap-2"
+        className="grid h-full my-4 mx-auto sm:w-[80%] md:w-[90%] p-2 gap-2"
         onSubmit={handleSubmit}
       >
         <div>
