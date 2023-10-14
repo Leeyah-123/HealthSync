@@ -1,17 +1,32 @@
-import DashboardPage from '../pages/dashboard/DashboardPage';
+import { DumbbellIcon, HomeIcon, User2Icon, UsersIcon } from 'lucide-react';
+import { Navigate } from 'react-router-dom';
+import Profile from '../components/complex/dashboard/Profile';
+import DashboardLayout from '../components/layout/dashboard/dashboard.layout';
 import Forum from '../pages/dashboard/Forum';
 import DashboardHome from '../pages/dashboard/Home';
-import Schedule from '../pages/dashboard/Schedule';
-import Settings from '../pages/dashboard/Settings';
+import WorkoutPlanner from '../pages/dashboard/Schedule';
 
 const DashboardRoutes = {
   path: '/dashboard',
-  element: <DashboardPage />,
+  element: <DashboardLayout />,
   children: [
-    { index: true, element: <DashboardHome /> },
-    { path: 'forum', element: <Forum /> },
-    { path: 'calendar', element: <Schedule /> },
-    { path: 'settings', element: <Settings /> },
+    { index: true, element: <Navigate to="home" replace /> },
+    {
+      path: 'home',
+      element: <DashboardHome />,
+      icon: <HomeIcon color="white" />,
+    },
+    {
+      path: 'profile',
+      element: <Profile />,
+      icon: <User2Icon color="white" />,
+    },
+    { path: 'forum', element: <Forum />, icon: <UsersIcon color="white" /> },
+    {
+      path: 'workout-plan',
+      element: <WorkoutPlanner color="white" />,
+      icon: <DumbbellIcon color="white" />,
+    },
   ],
 };
 

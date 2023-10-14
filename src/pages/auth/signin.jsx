@@ -1,4 +1,13 @@
+import { useNavigate } from 'react-router-dom';
+
 const Signin = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate('/dashboard');
+  };
+
   return (
     <div className="p-4">
       <div className="flex flex-col items-center text-center p-1">
@@ -13,31 +22,36 @@ const Signin = () => {
           Welcome back! Please enter your details
         </h2>
       </div>
-      <form className="w-full h-full my-4 mx-auto">
-        <div className="flex flex-col md:flex-row lg:flex-row">
-          <div className="flex flex-col p-2">
-            <label className="text-left" htmlFor="fullName">
-              Email:
-            </label>
-            <input
-              id="email"
-              className="w-full pl-2 pr-5 rounded-md py-2 border border-slate-400 font-mono tracking-wider"
-              type="email"
-              placeholder="e.g: johndoe@gmail.com"
-            ></input>
-          </div>
-          <div className="flex flex-col p-2">
-            <label className="text-left" htmlFor="password">
-              Password:
-            </label>
-            <input
-              id="password"
-              className="w-full pl-2 pr-5 rounded-md py-2 border border-slate-400 font-mono tracking-wider"
-              type="password"
-              placeholder="Password"
-            ></input>
-          </div>
+      <form
+        className="grid h-full my-4 mx-auto sm:w-[80%] md:w-full p-2 gap-2"
+        onSubmit={handleSubmit}
+      >
+        <div>
+          <label className="text-left" htmlFor="email">
+            Email:
+          </label>
+          <input
+            id="email"
+            className="w-full pl-2 pr-5 rounded-md py-2 border border-slate-400 font-mono tracking-wider"
+            type="email"
+            placeholder="e.g: johndoe@gmail.com"
+          ></input>
         </div>
+        <div>
+          <label className="text-left" htmlFor="password">
+            Password:
+          </label>
+          <input
+            id="password"
+            className="w-full pl-2 pr-5 rounded-md py-2 border border-slate-400 font-mono tracking-wider"
+            type="password"
+            placeholder="e.g: 123@Password"
+          ></input>
+        </div>
+
+        <button type="submit" className="mt-2 bg-[#CDFB47] py-2 rounded-md">
+          Submit
+        </button>
       </form>
     </div>
   );
