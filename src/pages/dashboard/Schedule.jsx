@@ -1,17 +1,16 @@
-import { useState, useCallback, useMemo } from "react";
+import moment from 'moment';
+import PropTypes from 'prop-types';
+import { useCallback, useMemo, useState } from 'react';
 import {
   Calendar,
-  momentLocalizer,
-  Views,
   DateLocalizer,
-} from "react-big-calendar";
-import moment from "moment";
-import "react-big-calendar/lib/css/react-big-calendar.css";
-import Profile from "../../components/complex/dashboard/Profile";
-import PropTypes from "prop-types";
+  Views,
+  momentLocalizer,
+} from 'react-big-calendar';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
 const localizer = momentLocalizer(moment);
 
-export default function Schedule() {
+export default function WorkoutPlanner() {
   const [myEvents, setEvents] = useState([]);
 
   const handleSelectSlot = useCallback(
@@ -39,27 +38,22 @@ export default function Schedule() {
 
   return (
     <main className="mt-14 mx-auto lg:mx-0 lg:mt-10 flex gap-8 justify-between w-[90%]">
-      <div className="lg:self-center w-[100%] lg:w-[70%] h-screen">
-        <Calendar
-          defaultDate={defaultDate}
-          defaultView={Views.WEEK}
-          events={myEvents}
-          localizer={localizer}
-          onSelectEvent={handleSelectEvent}
-          onSelectSlot={handleSelectSlot}
-          selectable
-          startAccessor="start"
-          endAccessor="end"
-          scrollToTime={scrollToTime}
-        />
-      </div>
-      <div className="hidden lg:block lg:w-[28%]">
-        <Profile />
-      </div>
+      <Calendar
+        defaultDate={defaultDate}
+        defaultView={Views.WEEK}
+        events={myEvents}
+        localizer={localizer}
+        onSelectEvent={handleSelectEvent}
+        onSelectSlot={handleSelectSlot}
+        selectable
+        startAccessor="start"
+        endAccessor="end"
+        scrollToTime={scrollToTime}
+      />
     </main>
   );
 }
 
-Schedule.propTypes = {
+WorkoutPlanner.propTypes = {
   localizer: PropTypes.instanceOf(DateLocalizer),
 };
