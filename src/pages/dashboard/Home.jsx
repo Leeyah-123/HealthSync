@@ -78,7 +78,7 @@ const DashboardHome = () => {
 
   return (
     <main className="px-5 sm:px-10 md:px-20 lg:px-0 mt-20 lg:mx-0 lg:mt-10 w-full grid lg:grid-cols-[70%_30%] gap-5">
-      <div>
+      <section aria-label="User Dashboard">
         <div className="flex flex-row justify-between">
           <div>
             <h2 className="text-2xl lg:text-[30px] font-bold">
@@ -118,7 +118,7 @@ const DashboardHome = () => {
           ))}
         </div>
 
-        <div className="grid gap-5 mx-auto lg:max-w-[95%]">
+        <div className="grid gap-10 mx-auto lg:max-w-[95%]">
           <Line
             options={{
               ...chartOptions,
@@ -136,7 +136,7 @@ const DashboardHome = () => {
             data={data}
           />
         </div>
-      </div>
+      </section>
 
       <Profile
         isProfileOpen={isProfileOpen}
