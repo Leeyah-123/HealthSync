@@ -46,22 +46,23 @@ export const services = [
 export const infos = [
   {
     id: 1,
-    amount: '27',
+    amount: 27,
     service: 'Years Experiences in health industries by expert',
   },
   {
     id: 2,
-    amount: '148',
+    amount: 148,
     service: 'Branch offices to give you best services worldwide',
   },
   {
     id: 3,
-    amount: '1000',
+    amount: 1000,
     service: 'New users login every single day to our app',
   },
   {
     id: 4,
-    amount: '120k+',
+    amount: 120,
+    unit: 'k+',
     service: 'Users download our videos every single day',
   },
 ];
