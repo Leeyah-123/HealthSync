@@ -1,12 +1,12 @@
-import { useRef } from "react";
+import { useRef, useLayoutEffect, useState } from "react";
 import { FaArrowRight, FaPlayCircle } from "react-icons/fa";
 import { AiFillPauseCircle } from "react-icons/ai";
 import vid from "/assets/healthSync-intro-vid.mp4";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect } from "react";
 
 const Hero = () => {
+  const [isVidControl, setIsVidControl] = useState(false)
   let heroText = "your health, our app".split(""); //text to be animated
 
   gsap.registerPlugin(ScrollTrigger);
@@ -60,6 +60,7 @@ const Hero = () => {
   const playVid = () => {
     if (vidRef.current) {
       vidRef.current.play();
+      setIsVidControl(true)
     }
   };
   const pauseVid = () => {
@@ -160,13 +161,14 @@ const Hero = () => {
           <div>
             <video
               ref={vidRef}
+              controls={isVidControl}
               width="420"
               height="340"
               className="rounded-lg mx-auto"
             >
               <source src={vid} type="video/mp4" />
             </video>
-            <div className="flex gap-6 mx-auto w-[70%]">
+            <div className="flex justify-center gap-6 mx-auto w-[70%]">
               <button
                 className="flex items-center justify-center capitalize gap-x-2"
                 onClick={playVid}
