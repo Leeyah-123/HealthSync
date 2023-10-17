@@ -70,7 +70,7 @@ const Hero = () => {
   };
 
   return (
-    <div ref={heroRef} className="grid md:grid-cols-2 gap-4  pt-6">
+    <div ref={heroRef} className="grid md:grid-cols-2 gap-4 lg:h-screen  pt-6">
       <div>
         <p className="w-4/5 text-black font-bold capitalize sl:w-4/5 text-2xl sm:text-4xl md:text-6xl lg:text-7xl md:w-full xl:w-3/4">
           {heroText.map((txt, index) => (

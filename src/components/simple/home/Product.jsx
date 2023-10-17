@@ -31,7 +31,7 @@ const Product = () => {
       </div>
       <div className="my-10 md:my-20 grid gap-10 text-center md:grid-cols-3 md:gap-8 md:text-left">
         {products.map((product) => (
-          <div key={product.id} className="product opacity-0 bg-lightGray rounded-3xl">
+          <div key={product.id} className="product opacity-0 relative bottom-[40px] bg-lightGray rounded-3xl">
             <p className="bg-tlgreen w-fit h-fit m-5 rounded-full py-3 ml-2 px-4 text-2xl font-bold">
               0{product.id}
             </p>
