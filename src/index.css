@@ -17,12 +17,14 @@
   background-color: transparent;
 }
 
-* {
-  font-family: 'Poppins', sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-a.active {
-  background-color: rgba(254, 254, 255, 0.4);
+:root {
+  font-family: 'Poppins', sans-serif;
 }
 
 @layer base {
@@ -35,10 +37,6 @@ a.active {
   .navlink:has(> a.active) {
     @apply after:w-full;
   }
-}
-
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 .feature {
@@ -59,10 +57,6 @@ a.active {
   color: white;
   padding: 1rem 0;
   font-size: 25px;
-}
-
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 .feature {

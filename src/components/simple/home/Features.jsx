@@ -4,30 +4,29 @@ import {
   FaBookOpen,
   FaCompactDisc,
   FaArrowLeft,
-} from "react-icons/fa";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
-import { animateCards } from "../../../utils/gsapUtils";
+} from 'react-icons/fa';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLayoutEffect, useRef } from 'react';
+import { animateCards } from '../../../utils/gsapUtils';
 
 const Features = () => {
-    gsap.registerPlugin(ScrollTrigger)
-    let featureRef = useRef(null)
+  gsap.registerPlugin(ScrollTrigger);
+  let featureRef = useRef(null);
 
-    useLayoutEffect(() => {
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      animateCards('.feature');
+    }, featureRef);
 
-        let ctx = gsap.context(() => {
-            animateCards(".feature")
-        }, featureRef)
-
-        return () => ctx.revert() 
-    },[])
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section ref={featureRef} className="my-12 md:my-20">
       <div className="grid sg:grid-cols-2 sg:gap-x-5">
         <p className="capitalize font-bold text-2xl w-3/4 sg:w-4/5  sg:mt-2 sg:text-4xl md:text-5xl ">
-          best Features we offer to you{" "}
+          best Features we offer to you{' '}
         </p>
         <div className="">
           <p className="my-5 md:text-xl text-btblack">

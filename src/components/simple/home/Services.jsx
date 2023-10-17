@@ -1,21 +1,19 @@
-import { useLayoutEffect } from "react";
-import { services } from "../../../utils/constants";
-import {gsap} from "gsap"
-import { animateCards } from "../../../utils/gsapUtils";
-import { useRef } from "react";
-
+import { useLayoutEffect } from 'react';
+import { services } from '../../../utils/constants';
+import { gsap } from 'gsap';
+import { animateCards } from '../../../utils/gsapUtils';
+import { useRef } from 'react';
 
 const Services = () => {
-  let servicesRef = useRef()
+  let servicesRef = useRef();
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      animateCards(".services")
-    }, servicesRef)
+      animateCards('.services');
+    }, servicesRef);
 
-    return () => ctx.revert()
-
-  }, [])
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section ref={servicesRef}>
@@ -27,12 +25,15 @@ const Services = () => {
           Our app provides a comprehensive catalog of services that cater to a
           wide range of needs, all accessible at your fingertips. With our app,
           you&apos;re not just downloading a piece of software; you&apos;re
-          unlocking a world of convenience and possibilities{" "}
+          unlocking a world of convenience and possibilities{' '}
         </p>
       </div>
       <div className="my-10 sl:my-20 grid gap-10 text-center sl:grid-cols-3 sl:gap-8 sl:text-left">
         {services.map((service) => (
-          <div key={service.id} className="services opacity-0 relative bottom-[40px]">
+          <div
+            key={service.id}
+            className="services opacity-0 relative bottom-[40px]"
+          >
             <img
               src={service.image}
               alt={`${service.title} image`}

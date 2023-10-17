@@ -1,12 +1,11 @@
 import {
   FaArrowRight,
-  FaInstagram,
   FaFacebook,
+  FaInstagram,
   FaTwitter,
-} from "react-icons/fa";
-import logo from "/assets/logo-rmbg.png";
-import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
+} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import logo from '/assets/logo-rmbg.png';
 const Footer = () => {
   return (
     <footer className="grid gap-5 lg:grid-cols-2 pb-8 pt-[4rem] px-[5%]  ">
@@ -21,7 +20,7 @@ const Footer = () => {
             className="w-[48px] lg:w-[62px] h-[42px] lg:h-[55px]"
           />
           <h1 className="font-black">
-            {" "}
+            {' '}
             health<span className="text-green">sync</span>
           </h1>
         </Link>
@@ -30,42 +29,24 @@ const Footer = () => {
           providing you with the tools, support
         </p>
       </div>
-      <div className=" grid grid-cols-2 gap-y-5 sm:gap-y-0 sm:grid-cols-5">
-        <div className="grid gap-1">
-          <h1 className="text-btblack  text-lg font-bold capitalize">about</h1>
-          <NavLink>our journey</NavLink>
-          <NavLink>our team</NavLink>
-          <NavLink>textimonial</NavLink>
+      <div className=" grid grid-cols-2">
+        <div className="grid gap-y-1">
+          <h2 className="text-btblack  text-lg font-bold capitalize">
+            Contact
+          </h2>
+          <a href="mailto:healthsync@gmail.com">Email Us</a>
+          <a href="tel:+09028428492">Call Us</a>
+          <a href="sms:09028428492">Send Us An SMS</a>
         </div>
 
         <div className="grid gap-y-1">
-          <h1 className="text-btblack font-bold capitalize">our product</h1>
-          <NavLink>products</NavLink>
-          <NavLink>method</NavLink>
-          <NavLink>price</NavLink>
-        </div>
-        <div className="grid">
-          <h1 className="text-btblack font-bold capitalize">Services</h1>
-          <NavLink>offerings</NavLink>
-          <NavLink>process</NavLink>
-          <NavLink>case studies</NavLink>
-        </div>
-
-        <div className="grid">
-          <h1 className="text-btblack font-bold capitalize">offer</h1>
-          <NavLink>discount</NavLink>
-          <NavLink>packaging</NavLink>
-          <NavLink>rewards</NavLink>
-        </div>
-
-        <div className="grid ">
-          <h1 className="text-btblack font-bold capitalize">contact us</h1>
-          <NavLink>infomations</NavLink>
-          <NavLink>contact form</NavLink>
-          <NavLink>relation map</NavLink>
+          <h2 className="text-btblack font-bold capitalize">Quick Links</h2>
+          <Link to="/auth/signin">Login</Link>
+          <Link to="/auth/signup">Signup</Link>
+          <Link to="/contact">Contact</Link>
         </div>
       </div>
-      <div className="grid  sm:grid-cols-2  mx-auto space-x-5 lg:mx-0">
+      <div className="grid sm:grid-cols-2 mx-auto space-x-5 lg:mx-0">
         <div className="">
           <button
             type="button"
@@ -82,27 +63,27 @@ const Footer = () => {
           </button>
         </div>
         <div className="flex gap-8 py-2">
-          <NavLink
+          <Link
+            to="#"
             className="bg-tlgreen h-fit w-fit block p-2.5 rounded-full"
             aria-label="Instagram link"
-            role="link"
           >
             <FaInstagram />
-          </NavLink>
-          <NavLink
+          </Link>
+          <Link
+            to="#"
             className="bg-tlgreen h-fit w-fit block p-2.5 rounded-full"
             aria-label="Facebook link"
-            role="link"
           >
             <FaFacebook />
-          </NavLink>
-          <NavLink
+          </Link>
+          <Link
+            to="#"
             className="bg-tlgreen h-fit w-fit block p-2.5 rounded-full"
             aria-label="Twitter link"
-            role="link"
           >
             <FaTwitter />
-          </NavLink>
+          </Link>
         </div>
       </div>
     </footer>
