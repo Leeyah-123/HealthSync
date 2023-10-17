@@ -39,7 +39,7 @@ const DashboardNavbar = () => {
         />
         <ul id="navigation" className="flex items-center flex-col mt-16 gap-8">
           {DashboardRoutes.children
-            .filter(({ path }) => path)
+            .filter(({ path, display }) => path && display)
             .map(({ path, icon }) => (
               <li key={path}>
                 <NavLink

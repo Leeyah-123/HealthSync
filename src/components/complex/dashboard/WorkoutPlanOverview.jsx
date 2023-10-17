@@ -2,7 +2,7 @@ import TodaysWorkout from '../../simple/dashboard/TodaysWorkout';
 import WorkoutPlanInfo from '../../simple/dashboard/WorkoutPlanInfo';
 import WorkoutSchedule from './WorkoutSchedule';
 
-const WorkoutPlan = () => {
+const WorkoutPlanOverview = () => {
   return (
     <div className="w-full lg:mx-0 lg:mt-10 gap-5">
       <div className="flex flex-col lg:flex-row pb-10">
@@ -19,7 +19,12 @@ const WorkoutPlan = () => {
           </div>
         </section>
         <section className="w-[95%] mx-auto bg-white p-5 -mt-10 lg:mt-0 lg:bg-transparent shadow-lg rounded-lg lg:rounded-none lg:shadow-none lg:w-full h-max">
-          <h2 className="text-2xl font-semibold mb-2">Workout Schedule</h2>
+          <h2 className="hidden text-2xl font-semibold mb-2 lg:block">
+            Workout Schedule
+          </h2>
+          <h2 className="text-2xl font-semibold mb-2 lg:hidden">
+            Metallicadpa PPL
+          </h2>
           <hr />
           <WorkoutSchedule />
         </section>
@@ -28,4 +33,4 @@ const WorkoutPlan = () => {
   );
 };
 
-export default WorkoutPlan;
+export default WorkoutPlanOverview;

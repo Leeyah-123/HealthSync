@@ -10,7 +10,7 @@
 // import 'react-big-calendar/lib/css/react-big-calendar.css';
 // const localizer = momentLocalizer(moment);
 
-import WorkoutPlan from '../../components/complex/dashboard/WorkoutPlan';
+import WorkoutPlanOverview from '../../components/complex/dashboard/WorkoutPlanOverview';
 
 // export default function WorkoutPlanner() {
 //   const [myEvents, setEvents] = useState([]);
@@ -61,7 +61,7 @@ import WorkoutPlan from '../../components/complex/dashboard/WorkoutPlan';
 // };
 
 const WorkoutPlanner = () => {
-  return <WorkoutPlan />;
+  return <WorkoutPlanOverview />;
 };
 
 export default WorkoutPlanner;

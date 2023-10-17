@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 const WorkoutPlanInfo = ({ workoutPlan }) => {
   return (
     <div className="shadow-md rounded-lg gap-2 p-5 h-full">
-      <h3 className="text-xl font-semibold text-center">Push Workout</h3>
+      <h3 className="text-xl font-semibold text-center">Metallicadpa PPL</h3>
       <hr />
       <p className="p-2">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
