@@ -6,7 +6,7 @@ import Services from '../simple/home/Services';
 
 const Main = () => {
   return (
-    <div className="bg-bgray h-full px-6">
+    <div className="bg-bgray h-full px-[5%] pb-8">
       <Hero />
       <Experience />
       <Features />
