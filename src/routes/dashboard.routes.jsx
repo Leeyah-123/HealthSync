@@ -29,7 +29,7 @@ const DashboardRoutes = {
       icon: <DumbbellIcon color="white" />,
       display: true,
     },
-    { path: 'workout/:name/preview', element: <WorkoutPlan /> },
+    { path: 'workout/:id/preview', element: <WorkoutPlan /> },
   ],
 };
 

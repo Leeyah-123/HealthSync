@@ -7,7 +7,7 @@ import logo from '/assets/logo-rmbg.png';
 const DashboardNavbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const toggleNavOpen = () => setIsNavOpen(!isNavOpen);
-  const navRef = useRef();
+  const headerRef = useRef();
 
   useEffect(() => {
     // disable scrolling of body when navbar is open
@@ -15,7 +15,8 @@ const DashboardNavbar = () => {
     else document.body.style.overflowY = 'unset';
 
     const handleClickOutside = (e) => {
-      if (isNavOpen && !navRef.current.contains(e.target)) setIsNavOpen(false);
+      if (isNavOpen && !headerRef.current.contains(e.target))
+        setIsNavOpen(false);
     };
 
     // close the nav if the user clicks outside
@@ -26,8 +27,8 @@ const DashboardNavbar = () => {
   }, [isNavOpen]);
 
   return (
-    <nav ref={navRef}>
-      <div
+    <header ref={headerRef}>
+      <nav
         className={`lg:block w-[100px] pt-14 lg:pt-8 h-full overflow-y-auto bg-lemon ${
           isNavOpen ? 'block z-10 lg:z-0 fixed lg:static top-0' : 'hidden'
         }`}
@@ -53,7 +54,7 @@ const DashboardNavbar = () => {
               </li>
             ))}
         </ul>
-      </div>
+      </nav>
 
       {/* hamburger menu icon */}
       <button
@@ -80,7 +81,7 @@ const DashboardNavbar = () => {
           }`}
         />
       </button>
-    </nav>
+    </header>
   );
 };
 

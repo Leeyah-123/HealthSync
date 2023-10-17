@@ -1,10 +1,10 @@
-import { PlayCircleIcon } from 'lucide-react';
+import { PlayIcon } from 'lucide-react';
 
 const TodaysWorkout = () => {
   return (
     <div
       className="h-[350px] w-full bg-[url('/stretching.png')] bg-green bg-center text-white bg-cover bg-origin- 
-    content bg-no-repeat lg:rounded-lg flex gap-2 place-items-end p-5 pb-16 max-w-full"
+    content bg-no-repeat lg:rounded-lg flex justify-between place-items-end px-5 pb-16 lg:pb-5 max-w-full"
     >
       <div className="h-fit">
         <h3 className="text-sm lg:hidden">Today&apos;s Workout</h3>
@@ -12,8 +12,14 @@ const TodaysWorkout = () => {
         <p className="text-xl font-medium">45-60 mins</p>
       </div>
 
-      <button>
-        <PlayCircleIcon width={50} height={50} />
+      <button className="bg-white/90 rounded-full p-2">
+        <PlayIcon
+          stroke="#000000"
+          fill="#000000"
+          opacity={0.9}
+          width={50}
+          height={50}
+        />
       </button>
     </div>
   );
