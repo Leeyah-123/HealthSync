@@ -24,11 +24,11 @@ const Contform = () => {
             </div>
             <div className="flex justify-center space-x-5  text-center mx-8">
                 <input type="checkbox" name="" id="" className="w-6 h-6 " />
-                <p className="font-semibold">Please sign me up for the news letter</p>
+                <p className="font-semibold">Please sign me up for the news letter.</p>
             </div>
             <div className="mx-auto   text-center">
                 <button type="submit" onClick={(e) => e.preventDefault()}
-                    className="bg-lemon py-3 px-14 uppercase"
+                    className="bg-lemon py-3 px-14 uppercase text-sm"
                     aria-label="submit button"
                 >send message </button>
             </div>
