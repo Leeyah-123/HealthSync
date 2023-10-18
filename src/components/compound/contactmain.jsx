@@ -1,6 +1,6 @@
 import Contheader from "../simple/contactpage/Contheader"
 import Contfooter from "../simple/contactpage/Contfooter"
-const contactmain = () => {
+const Contactmain = () => {
     return (
         <>
             <Contheader />
@@ -9,4 +9,4 @@ const contactmain = () => {
     )
 }
 
-export default contactmain
+export default Contactmain
