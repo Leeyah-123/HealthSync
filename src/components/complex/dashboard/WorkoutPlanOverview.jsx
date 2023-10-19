@@ -1,10 +1,10 @@
+import WorkoutSchedule from '../../compound/dashboard/WorkoutSchedule';
 import TodaysWorkout from '../../simple/dashboard/TodaysWorkout';
 import WorkoutPlanInfo from '../../simple/dashboard/WorkoutPlanInfo';
-import WorkoutSchedule from './WorkoutSchedule';
 
 const WorkoutPlanOverview = () => {
   return (
-    <div className="w-full lg:mx-0 lg:mt-10 gap-5">
+    <div className="w-full lg:mx-0 -mt-20 lg:mt-0 gap-5">
       <div className="flex flex-col lg:flex-row pb-10">
         <section className="w-full h-max">
           <h2 className="hidden text-2xl font-semibold mb-2 lg:block">

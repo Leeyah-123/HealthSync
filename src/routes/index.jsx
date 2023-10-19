@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import App from '../App.jsx';
 import '../index.css';
 
+import NotFound from '../pages/404.jsx';
 import Contact from '../pages/Contact.jsx';
 import Home from '../pages/Home.jsx';
 import AuthRoutes from './auth.routes.jsx';
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   },
   AuthRoutes,
   DashboardRoutes,
+  {
+    path: '*',
+    element: <NotFound />,
+  },
 ]);
 
 export default router;
