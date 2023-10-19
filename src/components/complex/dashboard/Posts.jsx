@@ -1,14 +1,14 @@
 import {
   GripHorizontal,
-  MessageCircle,
   Heart,
+  MessageCircle,
   PenLine,
   Trash2,
-} from "lucide-react";
-import { useNavigate, Link } from "react-router-dom";
-import Pagination from "../../simple/dashboard/Pagination";
-import { posts } from "../../../utils/constants";
-import { useState } from "react";
+} from 'lucide-react';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { posts } from '../../../utils/constants/static.constants';
+import Pagination from '../../simple/dashboard/Pagination';
 
 const Posts = () => {
   const navigate = useNavigate();
@@ -48,7 +48,7 @@ const Posts = () => {
         >
           <div
             className={`bg-white rounded-md py-4 px-6 absolute top-[25%] right-[5%] ${
-              isOptionsClicked.includes(index) ? "block" : "hidden"
+              isOptionsClicked.includes(index) ? 'block' : 'hidden'
             }`}
           >
             <div className="flex gap-4 cursor-pointer hover:text-lemon">
@@ -63,7 +63,7 @@ const Posts = () => {
 
           <div className="flex justify-between">
             <Link to={`${post.id}`}>
-              {" "}
+              {' '}
               <h2 className="font-bold text-lg lg:text-xl hover:text-green">
                 {post.title}
               </h2>
@@ -73,7 +73,7 @@ const Posts = () => {
               role="button"
               onClick={() => handleOptionsClicked(index)}
               className={`hover:bg-lemon hover:rounded-full w-[40px] h-[40px] flex justify-center items-center p-1 lg:p-2 ${
-                isOptionsClicked.includes(index) ? "bg-lemon rounded-full" : ""
+                isOptionsClicked.includes(index) ? 'bg-lemon rounded-full' : ''
               }`}
             >
               <GripHorizontal />
@@ -111,7 +111,7 @@ const Posts = () => {
                 handleLike(index);
               }}
             >
-              <Heart fill={like.includes(index) ? "green" : "none"} />
+              <Heart fill={like.includes(index) ? 'green' : 'none'} />
             </button>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { gsap } from 'gsap';
 import { useLayoutEffect, useRef } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
-import { products } from '../../../utils/constants';
+import { products } from '../../../utils/constants/static.constants';
 import { animateCards } from '../../../utils/gsapUtils';
 
 const Product = () => {

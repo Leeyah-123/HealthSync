@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { posts } from '../../../utils/constants';
+import { posts } from '../../../utils/constants/static.constants';
 import Comments from '../../simple/dashboard/Comments';
 import SocialShare from '../../simple/dashboard/SocialShare';
 

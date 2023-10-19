@@ -1,8 +1,7 @@
-import { useLayoutEffect } from 'react';
-import { services } from '../../../utils/constants';
 import { gsap } from 'gsap';
+import { useLayoutEffect, useRef } from 'react';
+import { services } from '../../../utils/constants/static.constants';
 import { animateCards } from '../../../utils/gsapUtils';
-import { useRef } from 'react';
 
 const Services = () => {
   let servicesRef = useRef();

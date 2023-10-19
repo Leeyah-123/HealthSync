@@ -1,9 +1,9 @@
-import { infos } from '../../../utils/constants';
-import woman from '/assets/woman2.png';
-import CountUp from 'react-countup';
-import { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLayoutEffect, useRef } from 'react';
+import CountUp from 'react-countup';
+import { infos } from '../../../utils/constants/static.constants';
+import woman from '/assets/woman2.png';
 
 const Experience = () => {
   gsap.registerPlugin(ScrollTrigger);
