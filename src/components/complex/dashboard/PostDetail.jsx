@@ -36,7 +36,9 @@ const PostDetail = () => {
     setTextAreaFocus(true);
   };
 
-  useLayoutEffect(() => {
+
+//todo: fix animation issue of content overflowing out of page
+  /*useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       if (comments == "true")
         gsap.to(window, {
@@ -53,6 +55,7 @@ const PostDetail = () => {
 
     return () => ctx.revert();
   }, []);
+  */
 
   useEffect(() => {
     if (comments == "true") focusOnTextArea();
