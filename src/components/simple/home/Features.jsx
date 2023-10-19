@@ -1,13 +1,13 @@
-import {
-  FaArrowRight,
-  FaExternalLinkAlt,
-  FaBookOpen,
-  FaCompactDisc,
-  FaArrowLeft,
-} from 'react-icons/fa';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLayoutEffect, useRef } from 'react';
+import {
+  FaArrowLeft,
+  FaArrowRight,
+  FaBookOpen,
+  FaCompactDisc,
+  FaExternalLinkAlt,
+} from 'react-icons/fa';
 import { animateCards } from '../../../utils/gsapUtils';
 
 const Features = () => {
@@ -39,14 +39,14 @@ const Features = () => {
               role="button"
               className="  w-fit h-fit p-1.5 mt-2 rounded-full border-2 border-black"
             >
-              <FaArrowLeft className="rounded-full bg-tlgreen p-2 w-14 h-14" />
+              <FaArrowLeft className="rounded-full bg-lemon p-2 w-14 h-14" />
             </button>
             <button
               aria-label="next"
               role="button"
               className="  w-fit p-4 rounded-full border-2 border-black"
             >
-              <FaArrowRight className="rounded-full bg-tlgreen p-2 w-14 h-14" />
+              <FaArrowRight className="rounded-full bg-lemon p-2 w-14 h-14" />
             </button>
           </div>
         </div>
@@ -70,7 +70,7 @@ const Features = () => {
             monitor campign.
           </p>
         </div>
-        <div className="feature opacity-0 relative  bottom-[40px] text-tlgreen">
+        <div className="feature opacity-0 relative  bottom-[40px] text-lemon">
           <FaCompactDisc className="relative left-3/4  mb-2 text-5xl" />
           <h1>real time</h1>
           <p className="text-slate-200">
@@ -80,7 +80,7 @@ const Features = () => {
           </p>
           <button
             type="button "
-            className="relative rounded-2xl px-8 py-4 font-bold text-xl top-14 capitalize bg-tlgreen text-lightblack"
+            className="relative rounded-2xl px-8 py-4 font-bold text-xl top-14 capitalize bg-lemon text-lightblack"
           >
             discover more
           </button>
