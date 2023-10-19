@@ -28,30 +28,37 @@ const Signin = () => {
       >
         <div>
           <label className="text-left" htmlFor="email">
-            Email:
+            Email<span className="text-red-500 font-bold">*</span>
           </label>
           <input
             id="email"
             className="w-full pl-2 pr-5 rounded-md py-2 border border-slate-400 font-mono tracking-wider"
             type="email"
             placeholder="e.g: johndoe@gmail.com"
-          ></input>
+            required
+          />
         </div>
         <div>
           <label className="text-left" htmlFor="password">
-            Password:
+            Password<span className="text-red-500 font-bold">*</span>
           </label>
           <input
             id="password"
             className="w-full pl-2 pr-5 rounded-md py-2 border border-slate-400 font-mono tracking-wider"
             type="password"
             placeholder="e.g: 123@Password"
-          ></input>
+            required
+          />
         </div>
 
         <button type="submit" className="mt-2 bg-[#CDFB47] py-2 rounded-md">
           Submit
         </button>
+
+        <p className="text-xs mt-2">
+          <span className="text-red-500 font-bold">*</span> indicates required
+          fields
+        </p>
       </form>
     </div>
   );
