@@ -6,7 +6,7 @@ const Contactmain = () => {
     return (
         <>
             <section className="w-full top-0 fixed h-full bg-lightGray1 opacity-15"></section>
-            <section className=" opacity-90 bg-white m-16">
+            <section className=" opacity-90 bg-white mx-3 md:m-16">
                 <Contheader />
                 <Conthero />
                 <Contform />
