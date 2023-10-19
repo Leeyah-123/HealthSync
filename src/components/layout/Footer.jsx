@@ -57,7 +57,7 @@ const Footer = () => {
           <button
             aria-label="next"
             role="button"
-            className="p-3 bg-tlgreen rounded-full h-fit w-fit -ml-2 mt-0.5"
+            className="p-3 bg-lemon rounded-full h-fit w-fit -ml-2 mt-0.5"
           >
             <FaArrowRight />
           </button>
@@ -65,21 +65,21 @@ const Footer = () => {
         <div className="flex gap-8 py-2">
           <Link
             to="#"
-            className="bg-tlgreen h-fit w-fit block p-2.5 rounded-full"
+            className="bg-lemon h-fit w-fit block p-2.5 rounded-full"
             aria-label="Instagram link"
           >
             <FaInstagram />
           </Link>
           <Link
             to="#"
-            className="bg-tlgreen h-fit w-fit block p-2.5 rounded-full"
+            className="bg-lemon h-fit w-fit block p-2.5 rounded-full"
             aria-label="Facebook link"
           >
             <FaFacebook />
           </Link>
           <Link
             to="#"
-            className="bg-tlgreen h-fit w-fit block p-2.5 rounded-full"
+            className="bg-lemon h-fit w-fit block p-2.5 rounded-full"
             aria-label="Twitter link"
           >
             <FaTwitter />
