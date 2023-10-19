@@ -5,10 +5,13 @@ import Contform from "../simple/contactpage/component/Contform"
 const Contactmain = () => {
     return (
         <>
-            <Contheader />
-            <Conthero />
-            <Contform />
-            <Contfooter />
+            <section className="w-full top-0 fixed h-full bg-lightGray1 opacity-15"></section>
+            <section className=" opacity-90 bg-white m-16">
+                <Contheader />
+                <Conthero />
+                <Contform />
+                <Contfooter />
+            </section>
         </>
     )
 }
