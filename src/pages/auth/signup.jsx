@@ -123,7 +123,7 @@ const Signup = () => {
 
         <button
           type="submit"
-          className="col-span-2 mt-2 bg-[#CDFB47] py-2 rounded-md"
+          className="mt-2 bg-[#CDFB47] py-2 rounded-md md:col-span-2"
         >
           Submit
         </button>
