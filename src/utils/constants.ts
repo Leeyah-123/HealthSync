@@ -16,7 +16,7 @@ export const products = [
     period: '1 month pass',
     text: 'With this tracking package, you can access real-time data on website traffic for a month',
     price: 0,
-  }
+  },
 ];
 
 export const services = [
@@ -25,7 +25,7 @@ export const services = [
     image: '/water.png',
     title: 'drink tracker',
     text: 'Our Drink Tracker helps monitor your daily water inatke effortlessly.Stay on top of your hydartion goals, improve your well-being',
-    color: 'tlgreen',
+    color: 'lemon',
   },
   {
     id: 2,

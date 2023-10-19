@@ -1,13 +1,13 @@
-import { useRef, useLayoutEffect, useState } from "react";
-import { FaArrowRight, FaPlayCircle } from "react-icons/fa";
-import { AiFillPauseCircle } from "react-icons/ai";
-import vid from "/assets/healthSync-intro-vid.mp4";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLayoutEffect, useRef, useState } from 'react';
+import { AiFillPauseCircle } from 'react-icons/ai';
+import { FaArrowRight, FaPlayCircle } from 'react-icons/fa';
+import vid from '/assets/healthSync-intro-vid.mp4';
 
 const Hero = () => {
-  const [isVidControl, setIsVidControl] = useState(false)
-  let heroText = "your health, our app".split(""); //text to be animated
+  const [isVidControl, setIsVidControl] = useState(false);
+  let heroText = 'your health, our app'.split(''); //text to be animated
 
   gsap.registerPlugin(ScrollTrigger);
   let tl = useRef();
@@ -17,38 +17,38 @@ const Hero = () => {
     let ctx = gsap.context(() => {
       tl.current = gsap
         .timeline()
-        .to(".heroText", {
+        .to('.heroText', {
           top: 8,
           opacity: 1,
           duration: 0.2,
           stagger: 0.1,
-          ease: "power1.out",
+          ease: 'power1.out',
           delay: 0.2,
         })
-        .to(".heroPText", {
+        .to('.heroPText', {
           opacity: 1,
           duration: 0.2,
           delay: 0.1,
         })
-        .to(".download", {
+        .to('.download', {
           opacity: 1,
           duration: 0.3,
           delay: 0.1,
           bottom: 10,
-          ease: "power1.out",
+          ease: 'power1.out',
         })
-        .to(".vid", {
+        .to('.vid', {
           opacity: 1,
           right: 2,
           duration: 0.5,
-          ease: "power1.out",
+          ease: 'power1.out',
           delay: 0.1,
         })
-        .to(".joinUs", {
+        .to('.joinUs', {
           opacity: 1,
           left: 10,
           duration: 0.7,
-          ease: "bounce.out",
+          ease: 'bounce.out',
         });
     }, heroRef);
 
@@ -60,7 +60,7 @@ const Hero = () => {
   const playVid = () => {
     if (vidRef.current) {
       vidRef.current.play();
-      setIsVidControl(true)
+      setIsVidControl(true);
     }
   };
   const pauseVid = () => {
@@ -84,7 +84,7 @@ const Hero = () => {
           ))}
         </p>
         <p className="heroPText opacity-0 my-5 text-sm lg:text-[15px] text-btblack ">
-          We are dedicated to helping you achieve your health goals{" "}
+          We are dedicated to helping you achieve your health goals{' '}
           <span>
             providing you with the tools, support and resources you need to lead
             a healthier, happier life.
@@ -100,7 +100,7 @@ const Hero = () => {
           <button
             aria-label="Join link"
             role="button"
-            className="p-4 bg-tlgreen rounded-full w-fit -ml-2 mt-0.5"
+            className="p-4 bg-lemon rounded-full w-fit -ml-2 mt-0.5"
           >
             <FaArrowRight />
           </button>
@@ -109,7 +109,7 @@ const Hero = () => {
         <div className="download relative opacity-0 bg-btblack text-bgray mt-16 rounded-3xl lg:w-[75%]">
           <div className="sm:flex gap-x-5 p-5 ">
             <img
-              src={"/scan.png"}
+              src={'/scan.png'}
               alt=""
               className="w-14 h-full bg-bgray mx-auto md:mx-0 mb-3 sm:mb-0"
             />
@@ -120,7 +120,7 @@ const Hero = () => {
                   Scan code, get four month access to our website for free
                 </p>
               </div>
-              <button className="hidden lg:block p-4 bg-tlgreen rounded-full h-fit w-fit -ml-2 mt-0.5">
+              <button className="hidden lg:block p-4 bg-lemon rounded-full h-fit w-fit -ml-2 mt-0.5">
                 <FaArrowRight color="black" />
               </button>
             </div>
@@ -130,29 +130,29 @@ const Hero = () => {
               200k <span className="block font-normal">connected users</span>
             </p>
             <p>
-              {" "}
+              {' '}
               120 <span className="block font-normal">skilled training</span>
             </p>
             <p className="flex space-x-2 sm:-space-x-2 mx-auto  md:mx-0.5 mt-4 sm:mt-0">
-              <img src={"/user.png"} alt="" className="w-10 h-10" />
-              <img src={"/user.png"} alt="" className="w-10 h-10" />
-              <img src={"/user.png"} alt="" className="w-10 h-10" />
+              <img src={'/user.png'} alt="" className="w-10 h-10" />
+              <img src={'/user.png'} alt="" className="w-10 h-10" />
+              <img src={'/user.png'} alt="" className="w-10 h-10" />
             </p>
           </div>
         </div>
       </div>
 
       <div className="vid text-center opacity-0 relative">
-        <div className="sg:flex bg-tlgreen rounded-2xl my-2">
-          <img src={"/iphone.png"} alt="" className="sg:w-44 sg:h-44 -mr-10" />
-          <div className="text-btblack bg-tlgreen mt-5">
+        <div className="sg:flex bg-lemon rounded-2xl my-2">
+          <img src={'/iphone.png'} alt="" className="sg:w-44 sg:h-44 -mr-10" />
+          <div className="text-btblack bg-lemon mt-5">
             <p className="p-5 font-semibold w-3/4 mx-auto">
               Our App is available on IOS and Android
             </p>
             <div className="flex  font-bold capitalize w-3/4 mx-auto gap-x-5 px-5 py-5 sg:py-0">
               <p className="mt-2">check it out </p>
               <p className="p-4 bg-btblack text-bgray rounded-full h-fit w-fit ">
-                <FaArrowRight />{" "}
+                <FaArrowRight />{' '}
               </p>
             </div>
           </div>
@@ -173,14 +173,14 @@ const Hero = () => {
                 className="flex items-center justify-center capitalize gap-x-2"
                 onClick={playVid}
               >
-                <FaPlayCircle className="text-tlgreen bg-btblack rounded-full mt-1.5" />
+                <FaPlayCircle className="text-lemon bg-btblack rounded-full mt-1.5" />
                 <span className="text-[12px] lg:text-lg mt-1">play video</span>
               </button>
               <button
                 onClick={pauseVid}
                 className="flex items-center justify-center capitalize gap-x-2"
               >
-                <AiFillPauseCircle className="text-tlgreen bg-btblack rounded-full mt-1.5" />
+                <AiFillPauseCircle className="text-lemon bg-btblack rounded-full mt-1.5" />
                 <span className="text-[12px] mt-1 lg:text-lg">pause</span>
               </button>
             </div>
