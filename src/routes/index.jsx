@@ -4,7 +4,7 @@ import '../index.css';
 
 import AuthRoutes from './auth.routes.jsx';
 import DashboardRoutes from './dashboard.routes.jsx';
-
+import Contactroute from './contactroute.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -12,6 +12,7 @@ const router = createBrowserRouter([
   },
   AuthRoutes,
   DashboardRoutes,
+  Contactroute,
 ]);
 
 export default router;

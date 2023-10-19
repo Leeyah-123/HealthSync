@@ -19,9 +19,8 @@ const Navbar = () => {
         {isNavOpen ? <FaTimes /> : <FaBars />}
       </button>
       <div
-        className={`gap-x-20 capitalize px-2  md:flex absolute left-0 bg-white  md:top-0 transition-all duration-500  w-full md:w-fit md:static pb-14 md:pb-0 ${
-          isNavOpen ? 'top-20' : '-top-96'
-        }`}
+        className={`gap-x-20 capitalize px-2  md:flex absolute left-0 bg-white  md:top-0 transition-all duration-500  w-full md:w-fit md:static pb-14 md:pb-0 ${isNavOpen ? 'top-20' : '-top-96'
+          }`}
       >
         <ul className="md:flex gap-x-8 mt-1.5 space-y-5 md:space-y-0 pb-10 md:pb-0">
           <li>
