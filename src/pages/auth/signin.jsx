@@ -1,11 +1,62 @@
+import { Spinner, useToast } from '@chakra-ui/react';
+import { EyeIcon, EyeOffIcon } from 'lucide-react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
+import { authRequests } from '../../utils/apiRequests/auth.requests';
 
 const Signin = () => {
+  const toast = useToast();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const authContext = useContext(AuthContext);
+
+  const initialState = {
+    email: '',
+    password: '',
+  };
+
+  const [form, setForm] = useState(initialState);
+  const [loading, setLoading] = useState(false);
+
+  // Hide or show Password
+  const [showPassword, setShowPassword] = useState(false);
+  const toggleShowPassword = () => setShowPassword(!showPassword);
+
+  const validateForm = () => {
+    // ensure all required fields are present as not all browsers prevent submission of form when required fields are empty
+    if (!form.email || !form.password)
+      return 'Please fill in all required fields';
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate('/dashboard');
+
+    // Validate form input and display error if any form input id invalid
+    const formError = validateForm();
+    if (formError) return toast({ status: 'error', title: formError });
+
+    // Send signup request
+    setLoading(true);
+    const response = await authRequests().login(form);
+    setLoading(false);
+
+    // display error message, if any
+    if (!response.success)
+      return toast({
+        status: 'error',
+        title: response.message,
+      });
+
+    // Set user in state
+    authContext.login(response.data.user);
+
+    // Display success message then redirect user to dashboard
+    toast({
+      status: 'success',
+      title: response.message,
+      onCloseComplete: navigate('/dashboard'),
+    });
   };
 
   return (
@@ -16,7 +67,7 @@ const Signin = () => {
           <span
             className="bg-[#CDFB47] rounded-full w-5 h-5 absolute top-0 -left-2"
             aria-hidden
-          ></span>
+          />
         </div>
         <h2 className="text-[.9rem] text-gray-400 pt-[.4em] tracking-wider">
           Welcome back! Please enter your details
@@ -31,6 +82,8 @@ const Signin = () => {
             Email<span className="text-red-500 font-bold">*</span>
           </label>
           <input
+            value={form.email}
+            onChange={(e) => setForm({ ...form, email: e.target.value })}
             id="email"
             className="w-full pl-2 pr-5 rounded-md py-2 border border-slate-400 font-mono tracking-wider"
             type="email"
@@ -42,17 +95,33 @@ const Signin = () => {
           <label className="text-left" htmlFor="password">
             Password<span className="text-red-500 font-bold">*</span>
           </label>
-          <input
-            id="password"
-            className="w-full pl-2 pr-5 rounded-md py-2 border border-slate-400 font-mono tracking-wider"
-            type="password"
-            placeholder="e.g: 123@Password"
-            required
-          />
+          <div className="relative">
+            <input
+              value={form.password}
+              onChange={(e) => setForm({ ...form, password: e.target.value })}
+              id="password"
+              className="w-full pl-2 pr-5 rounded-md py-2 border border-slate-400 font-mono tracking-wider"
+              type={showPassword ? 'text' : 'password'}
+              placeholder="e.g: 123@Password"
+              required
+            />
+            <button
+              onClick={toggleShowPassword}
+              type="button"
+              title={`${showPassword ? 'Hide' : 'Show'} Password`}
+              className="absolute top-1/2 -translate-y-1/2 right-2"
+            >
+              {showPassword ? <EyeOffIcon /> : <EyeIcon />}
+            </button>
+          </div>
         </div>
 
-        <button type="submit" className="mt-2 bg-[#CDFB47] py-2 rounded-md">
-          Submit
+        <button
+          type="submit"
+          className="mt-2 bg-[#CDFB47] py-2 rounded-md disabled:opacity-50"
+          disabled={loading}
+        >
+          {loading ? <Spinner marginTop={1} /> : 'Submit'}
         </button>
 
         <p className="text-xs mt-2">

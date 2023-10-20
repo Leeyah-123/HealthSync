@@ -3,18 +3,18 @@ export const todayDate = () => {
   const currentDate = new Date();
 
   const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
   ];
 
   // Get the day, month, and year components
@@ -24,4 +24,10 @@ export const todayDate = () => {
 
   // Format the date as "day MonthName year"
   return `${day} ${monthNames[monthIndex]} ${year}`;
+};
+
+// Wrapper function for API response
+export const apiResponse = (success, message, data) => {
+  if (Array.isArray(message)) message = message[0];
+  return { success, message, data };
 };
