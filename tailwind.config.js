@@ -17,6 +17,7 @@ export default {
         lightGray3: '#AAA8A8',
         bgray: '#f6f6f4',
         btblack: '#0f1412',
+        tlgreen: '#cdfb47',
         darkgray: '#eaeaea',
         lightblack: '#4b4948',
         lightGray: '#efefef',

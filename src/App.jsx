@@ -8,8 +8,6 @@ function App() {
       <main>
         <Outlet />
       </main>
-
-      {/* Footer should go here */}
       <Footer />
     </>
   );

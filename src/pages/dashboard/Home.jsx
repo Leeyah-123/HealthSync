@@ -17,13 +17,15 @@ import {
   Moon,
   UserCircle2,
 } from 'lucide-react';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import Profile from '../../components/complex/dashboard/Profile';
 import Card from '../../components/simple/dashboard/Card';
+import { AuthContext } from '../../contexts/AuthContext';
 import { todayDate } from '../../utils/helper';
 
 const DashboardHome = () => {
+  const authContext = useContext(AuthContext);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const toggleProfileOpen = () => setIsProfileOpen(!isProfileOpen);
 
@@ -82,7 +84,7 @@ const DashboardHome = () => {
         <div className="flex flex-row justify-between">
           <div>
             <h2 className="text-2xl lg:text-[30px] font-bold">
-              Hello, Gilbert
+              Hello, {authContext.user?.username || authContext.user?.firstName}
             </h2>
             <p className=" mt-2">Keep Moving & Stay Healthy</p>
           </div>

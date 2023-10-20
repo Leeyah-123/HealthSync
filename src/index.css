@@ -27,8 +27,8 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.dashboard-nav .active{
-  background-color: rgba(254,254,255, .4);
+.dashboard-nav .active {
+  background-color: rgba(254, 254, 255, 0.4);
 }
 
 @layer base {
@@ -50,30 +50,6 @@
   padding: 30px 10px;
   margin: 1rem 0;
 }
-
-/* .feature p {
-  color: #4b4948;
-} */
-
-.feature h1 {
-  text-transform: capitalize;
-  font-size: bold;
-  color: white;
-  padding: 1rem 0;
-  font-size: 25px;
-}
-
-.feature {
-  background-color: #0f1412;
-  border-radius: 2rem;
-  text-align: center;
-  padding: 30px 10px;
-  margin: 1rem 0;
-}
-
-/* .feature p {
-  color: #4b4948;
-} */
 
 .feature h1 {
   text-transform: capitalize;
