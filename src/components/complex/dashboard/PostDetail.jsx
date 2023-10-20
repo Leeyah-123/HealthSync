@@ -1,28 +1,28 @@
-import { useParams, useLocation } from "react-router-dom";
-import { useEffect, useState, useLayoutEffect } from "react";
-import { posts } from "../../../utils/constants";
+import { gsap } from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import {
   GripHorizontal,
-  Share2,
-  PenLine,
-  Trash2,
   Heart,
   MessageCircle,
-} from "lucide-react";
-import SocialShare from "../../simple/dashboard/SocialShare";
-import Comments from "../../simple/dashboard/Comments";
-import { gsap } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+  PenLine,
+  Share2,
+  Trash2,
+} from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
+import { posts } from '../../../utils/constants/static.constants';
+import Comments from '../../simple/dashboard/Comments';
+import SocialShare from '../../simple/dashboard/SocialShare';
 
 const PostDetail = () => {
   gsap.registerPlugin(ScrollToPlugin);
   const { id } = useParams();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const comments = queryParams.get("comments");
+  const comments = queryParams.get('comments');
   const [isOptionsClicked, setIsOptionsClicked] = useState(false);
   const [isShareCliked, setIsShareClicked] = useState(false);
-  const [fill, setFill] = useState("none");
+  const [fill, setFill] = useState('none');
   const [textAreaFocus, setTextAreaFocus] = useState(false);
   const currentUrl = window.location.origin + window.location.pathname;
 
@@ -36,8 +36,7 @@ const PostDetail = () => {
     setTextAreaFocus(true);
   };
 
-
-//todo: fix animation issue of content overflowing out of page
+  //todo: fix animation issue of content overflowing out of page
   /*useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       if (comments == "true")
@@ -58,7 +57,7 @@ const PostDetail = () => {
   */
 
   useEffect(() => {
-    if (comments == "true") focusOnTextArea();
+    if (comments == 'true') focusOnTextArea();
   }, []);
 
   const post = posts.filter((post) => post.id == id);
@@ -75,7 +74,7 @@ const PostDetail = () => {
         {/* options tab */}
         <div
           className={`bg-white rounded-md py-4 px-6 absolute top-[7%] sm:top-[10%] right-[5%] ${
-            isOptionsClicked ? "block" : "hidden"
+            isOptionsClicked ? 'block' : 'hidden'
           }`}
         >
           <button className="flex gap-4 cursor-pointer hover:text-lemon">
@@ -95,7 +94,7 @@ const PostDetail = () => {
             role="button"
             onClick={handleOptionsClicked}
             className={`hover:bg-lemon hover:rounded-full w-[40px] h-[40px] flex justify-center items-center p-1 lg:p-2 ${
-              isOptionsClicked ? "bg-lemon rounded-full" : ""
+              isOptionsClicked ? 'bg-lemon rounded-full' : ''
             }`}
           >
             <GripHorizontal />
@@ -190,7 +189,7 @@ const PostDetail = () => {
             aria-label="like"
             role="button"
             onClick={() => {
-              fill == "none" ? setFill("green") : setFill("none");
+              fill == 'none' ? setFill('green') : setFill('none');
             }}
           >
             <Heart fill={fill} />
