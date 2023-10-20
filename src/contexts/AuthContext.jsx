@@ -13,6 +13,7 @@ const initialAuthState = {
   logout: () => null,
   setUser: (user) => null,
 };
+
 //? declaration of auth context
 export const AuthContext = createContext(initialAuthState);
 
