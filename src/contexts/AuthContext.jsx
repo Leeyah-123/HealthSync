@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { createContext, useState } from 'react';
 import CookiesService from '../services/Cookies.service';
 import {
@@ -11,7 +12,7 @@ const initialAuthState = {
   user: null,
   login: () => null,
   logout: () => null,
-  setUser: (user) => null,
+  setUser: () => null,
 };
 
 //? declaration of auth context
@@ -39,8 +40,8 @@ export default function AuthContextContainer({ children }) {
 
   //? function to log a user in
   const login = (userData) => {
-    setIsLoggedIn(true);
     handleSetUser(userData);
+    setIsLoggedIn(true);
   };
 
   //? declaring value that will be passed down the app through the AuthContext's provider.
@@ -58,3 +59,7 @@ export default function AuthContextContainer({ children }) {
     </AuthContext.Provider>
   );
 }
+
+AuthContextContainer.propTypes = {
+  children: PropTypes.element,
+};

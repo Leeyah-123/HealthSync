@@ -41,7 +41,7 @@ const Footer = () => {
 
         <div className="grid gap-y-1">
           <h2 className="text-btblack font-bold capitalize">Quick Links</h2>
-          <Link to="/auth/signin">Login</Link>
+          <Link to="/auth/login">Login</Link>
           <Link to="/auth/signup">Signup</Link>
           <Link to="/contact">Contact</Link>
         </div>
