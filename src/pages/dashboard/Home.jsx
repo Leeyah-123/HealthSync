@@ -25,7 +25,6 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { todayDate } from '../../utils/helper';
 
 const DashboardHome = () => {
-  console.log(user)
   const { user } = useContext(AuthContext);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const toggleProfileOpen = () => setIsProfileOpen(!isProfileOpen);
@@ -144,6 +143,7 @@ const DashboardHome = () => {
       <Profile
         isProfileOpen={isProfileOpen}
         toggleProfileOpen={toggleProfileOpen}
+        user={user}
       />
     </div>
   );
