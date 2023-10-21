@@ -201,7 +201,9 @@ const Signup = () => {
           </label>
           <input
             value={form.height}
-            onChange={(e) => setForm({ ...form, height: e.target.value })}
+            onChange={(e) =>
+              setForm({ ...form, height: parseInt(e.target.value) })
+            }
             id="height"
             className="w-full pl-2 pr-5 rounded-md py-2 border border-slate-400 font-mono tracking-wider"
             type="number"
@@ -214,7 +216,9 @@ const Signup = () => {
           </label>
           <input
             value={form.weight}
-            onChange={(e) => setForm({ ...form, weight: e.target.value })}
+            onChange={(e) =>
+              setForm({ ...form, weight: parseInt(e.target.value) })
+            }
             id="weight"
             className="w-full pl-2 pr-5 rounded-md py-2 border border-slate-400 font-mono tracking-wider"
             type="number"
