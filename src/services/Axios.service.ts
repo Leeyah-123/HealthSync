@@ -15,12 +15,14 @@ export default class AxiosService {
     },
   });
 
-  static protectedMainInstance = axios.create({
-    baseURL: import.meta.env.VITE_BACKEND_URL,
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  static protectedMainInstance = (passedToken) =>
+    axios.create({
+      baseURL: import.meta.env.VITE_BACKEND_URL,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+        Authorization: `Bearer ${passedToken || token}`,
+      },
+    });
 }

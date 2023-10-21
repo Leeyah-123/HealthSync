@@ -10,9 +10,9 @@ const axiosInstance = AxiosService.mainInstance;
 const axiosProtectedInstance = AxiosService.protectedMainInstance;
 
 export const authRequests = () => ({
-  profile: async () => {
+  profile: async (token) => {
     try {
-      let response = await axiosProtectedInstance({
+      let response = await axiosProtectedInstance(token)({
         method: 'GET',
         url: '/auth/profile',
       });
@@ -39,7 +39,8 @@ export const authRequests = () => ({
       let token = response.data.token;
 
       // ? fetch user's details
-      const fetchProfile = await authRequests().profile();
+      const fetchProfile = await authRequests().profile(token);
+      console.log('Data', fetchProfile?.data);
       if (
         (await CookiesService.setter(HEALTHSYNC_AUTH_TOKEN_KEY, token)) &&
         (await CookiesService.setter(HEALTHSYNC_USER_KEY, fetchProfile?.data))

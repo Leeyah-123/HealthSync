@@ -25,7 +25,7 @@ import { AuthContext } from '../../contexts/AuthContext';
 import { todayDate } from '../../utils/helper';
 
 const DashboardHome = () => {
-  const authContext = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const toggleProfileOpen = () => setIsProfileOpen(!isProfileOpen);
 
@@ -84,7 +84,7 @@ const DashboardHome = () => {
         <div className="flex flex-row justify-between">
           <div>
             <h2 className="text-2xl lg:text-[30px] font-bold">
-              Hello, {authContext.user?.username || authContext.user?.firstName}
+              Hello, {user?.username || user?.firstName}
             </h2>
             <p className=" mt-2">Keep Moving & Stay Healthy</p>
           </div>

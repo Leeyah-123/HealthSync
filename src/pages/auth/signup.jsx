@@ -78,8 +78,9 @@ const Signup = () => {
     toast({
       status: 'success',
       title: response.message,
-      onCloseComplete: navigate('/dashboard'),
     });
+
+    navigate('/dashboard');
   };
 
   return (
