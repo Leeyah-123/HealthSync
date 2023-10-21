@@ -9,8 +9,8 @@ const Profile = ({ isProfileOpen, toggleProfileOpen }) => {
   const authContext = useContext(AuthContext);
 
   const userInfo = [
-    { name: 'Height', value: '185cm' },
-    { name: 'Weight', value: '65kg' },
+    { name: 'Height', value: `${user.height}m` },
+    { name: 'Weight', value: `${user.currentWeight}kg` },
     { name: 'Age', value: '54' },
   ];
   const goals = [

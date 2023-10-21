@@ -24,6 +24,7 @@ const Navbar = () => {
       </Link>
       <button
         type="button"
+        aria-label="view-navigation-links"
         className="md:hidden text-2xl pt-2.5"
         onClick={() => setIsNavOpen(!isNavOpen)}
       >
