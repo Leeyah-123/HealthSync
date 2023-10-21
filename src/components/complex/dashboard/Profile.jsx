@@ -3,10 +3,10 @@ import { XIcon } from 'lucide-react';
 import PropTypes from 'prop-types';
 import profileImg from '/assets/fatMan.jpg';
 
-const Profile = ({ isProfileOpen, toggleProfileOpen }) => {
+const Profile = ({ isProfileOpen, toggleProfileOpen, user }) => {
   const userInfo = [
-    { name: 'Height', value: '185cm' },
-    { name: 'Weight', value: '65kg' },
+    { name: 'Height', value: `${user.height}m` },
+    { name: 'Weight', value: `${user.currentWeight}kg` },
     { name: 'Age', value: '54' },
   ];
   const goals = [
@@ -32,8 +32,8 @@ const Profile = ({ isProfileOpen, toggleProfileOpen }) => {
             className="rounded-[20px] w-[160px] h-[150px] mx-auto"
             alt="profile-image"
           />
-          <h2 className="font-bold mt-6 text-xl">Rodney Gilbert</h2>
-          <p className="text-lemon mt-2">Athletic Coach</p>
+          <h2 className="font-bold mt-6 text-xl">{user.firstName} {user.lastName}</h2>
+          <p className="text-lemon mt-2">{user.role}</p>
         </div>
         <div className="flex gap-4 pr-2 mt-4 justify-center min-w-fit flex-wrap xl:flex-nowrap xl:justify-evenly xl:gap-0">
           {userInfo.map((info, index) => (

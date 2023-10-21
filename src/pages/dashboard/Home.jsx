@@ -143,6 +143,7 @@ const DashboardHome = () => {
       <Profile
         isProfileOpen={isProfileOpen}
         toggleProfileOpen={toggleProfileOpen}
+        user={user}
       />
     </div>
   );
