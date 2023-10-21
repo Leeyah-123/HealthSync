@@ -2,8 +2,12 @@ import { Checkbox, Progress } from '@chakra-ui/react';
 import { XIcon } from 'lucide-react';
 import PropTypes from 'prop-types';
 import profileImg from '/assets/fatMan.jpg';
+import { useContext } from 'react';
+import { AuthContext } from '../../../contexts/AuthContext';
 
 const Profile = ({ isProfileOpen, toggleProfileOpen }) => {
+  const authContext = useContext(AuthContext);
+
   const userInfo = [
     { name: 'Height', value: '185cm' },
     { name: 'Weight', value: '65kg' },
@@ -32,8 +36,7 @@ const Profile = ({ isProfileOpen, toggleProfileOpen }) => {
             className="rounded-[20px] w-[160px] h-[150px] mx-auto"
             alt="profile-image"
           />
-          <h2 className="font-bold mt-6 text-xl">Rodney Gilbert</h2>
-          <p className="text-lemon mt-2">Athletic Coach</p>
+          <h2 className="font-bold mt-6 text-xl">{`${authContext?.user?.firstName} ${authContext?.user?.lastName}`}</h2>
         </div>
         <div className="flex gap-4 pr-2 mt-4 justify-center min-w-fit flex-wrap xl:flex-nowrap xl:justify-evenly xl:gap-0">
           {userInfo.map((info, index) => (

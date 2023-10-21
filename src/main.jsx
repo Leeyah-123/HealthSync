@@ -11,11 +11,12 @@ import { toastOptions } from './utils/constants/misc.constants';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <WorkoutContextContainer></WorkoutContextContainer>{' '}
-    <AuthContextContainer>
-      <ChakraProvider toastOptions={{ defaultOptions: toastOptions }}>
-        <RouterProvider router={router} />
-      </ChakraProvider>
-    </AuthContextContainer>
+    <WorkoutContextContainer>
+      <AuthContextContainer>
+        <ChakraProvider toastOptions={{ defaultOptions: toastOptions }}>
+          <RouterProvider router={router} />
+        </ChakraProvider>
+      </AuthContextContainer>
+    </WorkoutContextContainer>
   </React.StrictMode>
 );

@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const WorkoutCard = ({ day, name, date }) => {
+const WorkoutCard = ({ day, id, name, date }) => {
   const currentDate = new Date();
 
   return (
     <Link
-      to={`/dashboard/workout/${name}/preview`}
+      to={`/dashboard/workout/${id}/preview`}
       className={`w-full flex gap-2 text-lg p-3 shadow-md place-items-center rounded-md cursor-pointer hover:shadow-lg ${
         date.toDateString() === currentDate.toDateString()
           ? 'bg-green text-white'
@@ -39,6 +39,7 @@ const WorkoutCard = ({ day, name, date }) => {
 
 WorkoutCard.propTypes = {
   day: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   date: PropTypes.instanceOf(Date).isRequired,
 };
