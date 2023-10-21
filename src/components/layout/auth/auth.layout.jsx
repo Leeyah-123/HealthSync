@@ -1,7 +1,16 @@
-import { Outlet } from 'react-router-dom';
+import { useContext, useEffect } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthContext';
 import AuthNavbar from './Navbar';
 
 const AuthLayout = () => {
+  const navigate = useNavigate();
+  const authContext = useContext(AuthContext);
+
+  useEffect(() => {
+    if (authContext.isLoggedIn) navigate('/dashboard');
+  }, [navigate, authContext]);
+
   return (
     <div className="flex flex-col-reverse mx-0 my-auto md:flex-row lg:flex-row justify-between items-center relative">
       <span
