@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import WorkoutSchedule from '../../compound/dashboard/WorkoutSchedule';
 import TodaysWorkout from '../../simple/dashboard/TodaysWorkout';
 import WorkoutPlanInfo from '../../simple/dashboard/WorkoutPlanInfo';
@@ -31,6 +32,10 @@ const WorkoutPlanOverview = ({ activeWorkout }) => {
       </div>
     </div>
   );
+};
+
+WorkoutPlanOverview.propTypes = {
+  activeWorkout: PropTypes.object.isRequired,
 };
 
 export default WorkoutPlanOverview;

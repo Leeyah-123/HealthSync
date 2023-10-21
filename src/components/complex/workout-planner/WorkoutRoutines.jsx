@@ -1,5 +1,6 @@
 import { Skeleton, Stack, useToast } from '@chakra-ui/react';
 import { PlusIcon } from 'lucide-react';
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { workoutPlannerRequests } from '../../../utils/apiRequests/workout-planner.requests';
 import RoutineCard from '../../simple/dashboard/RoutineCard';
@@ -78,6 +79,13 @@ const WorkoutRoutines = ({
       </button>
     </section>
   );
+};
+
+WorkoutRoutines.propTypes = {
+  preferences: PropTypes.array.isRequired,
+  selectedRoutine: PropTypes.string.isRequired,
+  setSelectedRoutine: PropTypes.func.isRequired,
+  setActiveStep: PropTypes.func.isRequired,
 };
 
 export default WorkoutRoutines;

@@ -1,10 +1,11 @@
-import { useToast, Skeleton } from '@chakra-ui/react';
+import { Skeleton, useToast } from '@chakra-ui/react';
 import {
   ArrowLeftIcon,
   ClipboardCheckIcon,
   Clock5Icon,
   PlayIcon,
 } from 'lucide-react';
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { workoutPlannerRequests } from '../../utils/apiRequests/workout-planner.requests';
@@ -16,6 +17,11 @@ const Exercise = ({ name, description }) => {
       <p className="font-thin text-sm">{description}</p>
     </div>
   );
+};
+
+Exercise.propTypes = {
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 const WorkoutPlan = () => {
