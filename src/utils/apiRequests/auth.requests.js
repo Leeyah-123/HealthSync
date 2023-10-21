@@ -40,7 +40,7 @@ export const authRequests = () => ({
 
       // ? fetch user's details
       const fetchProfile = await authRequests().profile(token);
-      console.log('Data', fetchProfile?.data);
+
       if (
         (await CookiesService.setter(HEALTHSYNC_AUTH_TOKEN_KEY, token)) &&
         (await CookiesService.setter(HEALTHSYNC_USER_KEY, fetchProfile?.data))
@@ -73,13 +73,14 @@ export const authRequests = () => ({
       let token = response.data.token;
 
       // ? fetch user's details
-      const fetchProfile = await authRequests().profile();
+      const fetchProfile = await authRequests().profile(token);
+
       if (
         (await CookiesService.setter(HEALTHSYNC_AUTH_TOKEN_KEY, token)) &&
         (await CookiesService.setter(HEALTHSYNC_USER_KEY, fetchProfile?.data))
       ) {
         if (token)
-          return apiResponse(true, 'User successfully registered.', {
+          return apiResponse(true, 'User successfully logged in.', {
             token,
             user: fetchProfile?.data,
           });
