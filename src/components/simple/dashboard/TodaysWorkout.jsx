@@ -1,6 +1,6 @@
 import { PlayIcon } from 'lucide-react';
 
-const TodaysWorkout = () => {
+const TodaysWorkout = ({ activeWorkout }) => {
   return (
     <div
       className="h-[350px] w-full bg-[url('/stretching.png')] bg-green bg-center text-white bg-cover bg-origin- 
@@ -8,8 +8,12 @@ const TodaysWorkout = () => {
     >
       <div className="h-fit">
         <h3 className="text-sm lg:hidden">Today&apos;s Workout</h3>
-        <h3 className="text-2xl font-semibold">Push Workout</h3>
-        <p className="text-xl font-medium">45-60 mins</p>
+        <h3 className="text-2xl font-semibold">
+          {activeWorkout?.routine?.name}
+        </h3>
+        <p className="text-xl font-medium">
+          {activeWorkout?.routine?.duration} mins
+        </p>
       </div>
 
       <button className="bg-white/90 rounded-full p-2">

@@ -10,16 +10,25 @@ import {
   StepTitle,
   Stepper,
   useSteps,
+  useToast,
 } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { WorkoutContext } from '../../../contexts/WorkoutContext';
+import { workoutPlannerRequests } from '../../../utils/apiRequests/workout-planner.requests';
+import FinalWorkoutPlanDetails from '../../simple/dashboard/workout-planner/FinalWorkoutPlanDetails';
+import PrimaryGoalsForm from '../../simple/dashboard/workout-planner/PrimaryGoalsForm';
+import WorkoutRoutines from '../workout-planner/WorkoutRoutines';
 
 const steps = [
-  { title: 'First', description: 'Workout Info' },
-  { title: 'Second', description: 'More About You' },
-  { title: 'Third', description: 'Select/Create routine' },
+  { title: 'First', description: 'Primary Goals' },
+  { title: 'Second', description: 'Select/Create routine' },
+  { title: 'Third', description: 'Final Details' },
 ];
 
 const WorkoutPlanOverview = () => {
+  const toast = useToast();
+  const workoutContext = useContext(WorkoutContext);
+
   const { activeStep, setActiveStep } = useSteps({
     index: 1,
     count: steps.length,
@@ -46,6 +55,56 @@ const WorkoutPlanOverview = () => {
     // Remove event listener on cleanup
     return () => window.removeEventListener('resize', handleTabsOrientation);
   }, [tabsOrientation]);
+
+  const [loading, setLoading] = useState(false);
+  const [preferences, setPreferences] = useState({
+    PRIMARY_GOAL: '',
+    WORKOUT_TYPE: '',
+    ROUTINE_FOCUS: '',
+    STRENGTH_LEVEL: '',
+  });
+  const [selectedRoutine, setSelectedRoutine] = useState();
+  const [details, setDetails] = useState({
+    name: '',
+    description: '',
+    trainingDays: ['Mon', 'Tue', 'Wed', 'Thur', 'Fri'],
+    startDate: '',
+    endDate: '',
+  });
+
+  const completeWorkoutPlanCreation = async (e) => {
+    e.preventDefault();
+
+    if (
+      !details.name ||
+      !details.description ||
+      details.trainingDays.length === 0 ||
+      !details.startDate ||
+      !details.endDate
+    )
+      return toast({
+        title: 'Please fill in all fields',
+        status: 'error',
+      });
+
+    setLoading(true);
+    const response = await workoutPlannerRequests().createWorkoutPlan({
+      name: details.name,
+      description: details.description,
+      trainingDays: details.trainingDays,
+      routineId: selectedRoutine,
+      startDate: details.startDate,
+      endDate: details.endDate,
+    });
+    setLoading(false);
+
+    if (!response.success) {
+      return toast({ title: response.message, status: 'error' });
+    }
+
+    workoutContext.setActiveWorkout(response.data);
+    toast({ title: 'Workout Plan Created Successfully', status: 'success' });
+  };
 
   return (
     <div className="px-5 sm:px-10 md:px-20 lg:px-0 lg:mx-0 w-full gap-5">
@@ -79,11 +138,31 @@ const WorkoutPlanOverview = () => {
         </Stepper>
 
         {/* Stepper content */}
-        <div>
-          {activeStep === 1 && <div>Step 1</div>}
-          {activeStep === 2 && <div>Step 2</div>}
-          {activeStep === 3 && <div>Step 3</div>}
-        </div>
+        <section>
+          {activeStep === 1 && (
+            <PrimaryGoalsForm
+              preferences={preferences}
+              setPreferences={setPreferences}
+              setActiveStep={setActiveStep}
+            />
+          )}
+          {activeStep === 2 && (
+            <WorkoutRoutines
+              preferences={preferences}
+              selectedRoutine={selectedRoutine}
+              setSelectedRoutine={setSelectedRoutine}
+              setActiveStep={setActiveStep}
+            />
+          )}
+          {activeStep === 3 && (
+            <FinalWorkoutPlanDetails
+              details={details}
+              setDetails={setDetails}
+              handleSubmit={completeWorkoutPlanCreation}
+              loading={loading}
+            />
+          )}
+        </section>
       </div>
     </div>
   );

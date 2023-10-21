@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 import WorkoutSchedule from '../../compound/dashboard/WorkoutSchedule';
 import TodaysWorkout from '../../simple/dashboard/TodaysWorkout';
 import WorkoutPlanInfo from '../../simple/dashboard/WorkoutPlanInfo';
 
-const WorkoutPlanOverview = () => {
+const WorkoutPlanOverview = ({ activeWorkout }) => {
   return (
     <div className="w-full lg:mx-0 -mt-20 lg:mt-0 gap-5">
       <div className="flex flex-col lg:flex-row pb-10">
@@ -11,10 +12,10 @@ const WorkoutPlanOverview = () => {
             Today&apos;s Workout
           </h2>
           <div className="h-full flex flex-col gap-4 lg:w-[90%] xl:w-[80%]">
-            <TodaysWorkout />
+            <TodaysWorkout activeWorkout={activeWorkout} />
             <div className="hidden lg:block">
               <h3 className="text-2xl font-semibold mb-2">Plan Info</h3>
-              <WorkoutPlanInfo />
+              <WorkoutPlanInfo activeWorkout={activeWorkout} />
             </div>
           </div>
         </section>
@@ -23,14 +24,18 @@ const WorkoutPlanOverview = () => {
             Workout Schedule
           </h2>
           <h2 className="text-2xl font-semibold mb-2 lg:hidden">
-            Metallicadpa PPL
+            {activeWorkout?.name}
           </h2>
           <hr />
-          <WorkoutSchedule />
+          <WorkoutSchedule activeWorkout={activeWorkout} />
         </section>
       </div>
     </div>
   );
+};
+
+WorkoutPlanOverview.propTypes = {
+  activeWorkout: PropTypes.object.isRequired,
 };
 
 export default WorkoutPlanOverview;
