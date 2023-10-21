@@ -5,11 +5,13 @@ import { RouterProvider } from 'react-router-dom';
 import './index.css';
 
 import AuthContextContainer from './contexts/AuthContext';
+import WorkoutContextContainer from './contexts/WorkoutContext';
 import router from './routes/index.jsx';
 import { toastOptions } from './utils/constants/misc.constants';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <WorkoutContextContainer></WorkoutContextContainer>{' '}
     <AuthContextContainer>
       <ChakraProvider toastOptions={{ defaultOptions: toastOptions }}>
         <RouterProvider router={router} />
