@@ -5,7 +5,7 @@ import profileImg from '/assets/fatMan.jpg';
 import { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthContext';
 
-const Profile = ({ isProfileOpen, toggleProfileOpen }) => {
+const Profile = ({ isProfileOpen, toggleProfileOpen, user }) => {
   const authContext = useContext(AuthContext);
 
   const userInfo = [
